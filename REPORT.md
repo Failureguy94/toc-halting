@@ -2,6 +2,8 @@
 
 **Theory of Computation — Problem 6 · Experimental Report**
 
+**Live interactive app:** [https://toc-halting.streamlit.app](https://toc-halting.streamlit.app)
+
 ---
 
 ## Abstract
@@ -399,6 +401,9 @@ python -m pytest tests -v     # 34 tests: simulator, features, models, headless 
 python experiment.py          # regenerates everything in results/ (≈ 3 min)
 streamlit run app.py          # interactive simulator and predictor
 ```
+
+The same app is deployed at [https://toc-halting.streamlit.app](https://toc-halting.streamlit.app)
+(free hosting, so the first load after a quiet spell can take about 30 s while it wakes up).
 
 All randomness is seeded (dataset seeds 42 and 1042, split seeds 42–46), so a re-run reproduces
 every metric in this report. Only the timing columns and §3.8 vary between machines.
