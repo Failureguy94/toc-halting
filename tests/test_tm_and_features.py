@@ -110,3 +110,98 @@ def test_features_static_and_probe():
     tm_no_halt, _ = parse_machine("q0 _ _ R q0")
     assert static_features(tm_no_halt, "")["dist_to_halt"] == 99
 
+
+
+# ------------------------------------------------------------ more simulator tests
+import random
+
+import pytest
+
+from tm import HARD_STATES, RANDOM_STATES, sample_machine
+
+
+def _preset(name):
+    tm, err = parse_machine(PRESETS[name][0])
+    assert err == [] and tm is not None
+    return tm
+
+
+@pytest.mark.parametrize(
+    "inp, expected",
+    [("0", "1"), ("1", "10"), ("1011", "1100"), ("111", "1000"), ("1001", "1010"), ("", "1")],
+)
+def test_binary_incrementer_outputs(inp, expected):
+    res = run(_preset("Binary incrementer (halts)"), inp, 200)
+    assert res.status == "halted"
+    assert res.tape_string() == expected
+
+
+def test_three_state_busy_beaver_writes_six_ones():
+    res = run(_preset("3-state busy beaver (halts)"), "", 100)
+    assert res.status == "halted"
+    assert res.tape_string() == "111111"
+
+
+def test_two_state_busy_beaver():
+    res = run(_preset("2-state busy beaver (halts)"), "", 100)
+    assert (res.status, res.steps, res.tape_string()) == ("halted", 6, "1111")
+
+
+def test_unary_addition():
+    tm = _preset("Unary addition 111+11 (halts)")
+    assert run(tm, "111+11", 100).tape_string() == "11111"
+    assert run(tm, "1+1", 100).tape_string() == "11"
+
+
+@pytest.mark.parametrize(
+    "inp, verdict", [("", "Y"), ("0", "Y"), ("0110", "Y"), ("1011101", "Y"), ("10", "N"), ("1101", "N")]
+)
+def test_palindrome_checker(inp, verdict):
+    res = run(_preset("Binary palindrome checker (halts, writes Y/N)"), inp, 1000)
+    assert res.status == "halted"
+    assert res.tape_string().strip("_") == verdict
+
+
+def test_countdown_is_a_slow_halter():
+    tm = _preset("Binary countdown to zero (slow halter)")
+    res = run(tm, "1100", 1000)
+    assert res.status == "halted" and res.tape_string() == "0000"
+    assert res.steps > 100  # halts, but only after L = 100
+    assert run(tm, "1100", 100).status == "limit"  # so 'not within 100' is correct, not 'never'
+
+
+def test_structured_non_halters_are_never_called_halted():
+    # Ping-pong repeats a configuration -> provably looping (both loop detectors agree)
+    ping = _preset("Ping-pong (provably loops)")
+    assert run(ping, "", 1000).status == "looping"
+    assert run(ping, "", 1000, exact_loop_check=True).status == "looping"
+    # These never halt but never repeat a configuration either -> only 'limit' is honest
+    for name in ["Run-away right (never halts, but not provable by repetition)",
+                 "Binary counter (counts forever, never halts)"]:
+        for detector in (False, True):
+            res = run(_preset(name), PRESETS[name][1], 2000, exact_loop_check=detector)
+            assert res.status == "limit" and res.steps == 2000
+
+
+def test_halted_at_exact_budget_is_halted_not_limit():
+    # Busy beaver 3 halts at step 14; a budget of exactly 14 must report 'halted'
+    tm = _preset("3-state busy beaver (halts)")
+    assert run(tm, "", 14).status == "halted"
+    assert run(tm, "", 13).status == "limit"
+
+
+def test_parser_rejects_malformed_rules_with_messages():
+    for bad in ["q0 0 1 R", "q0 0 1 R q1 extra", "q0 0 1 Z q1", "q0 ab 1 R q1"]:
+        tm, errors = parse_machine(bad)
+        assert tm is None and errors, bad
+    tm, errors = parse_machine("# only a comment\n")
+    assert tm is None and errors == ["no rules found"]
+
+
+def test_sample_machine_populations():
+    rng = random.Random(0)
+    for _ in range(50):
+        r = sample_machine(rng, "random")
+        h = sample_machine(rng, "hard")
+        assert RANDOM_STATES[0] <= len({s for s, _ in r.transitions}) <= RANDOM_STATES[1]
+        assert len({s for s, _ in h.transitions}) <= HARD_STATES[1]

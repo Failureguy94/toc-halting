@@ -23,7 +23,7 @@ The general Halting Problem $H_{\text{TM}} = \{\langle M, w \rangle \mid M \text
 $$H_{\text{TM}}^{\le L} = \{\langle M, w \rangle \mid M \text{ halts on } w \text{ within } L \text{ steps}\}$$
 is **decidable** in $O(L)$ simulation steps.
 
-Because non-halting machines cannot always be detected (e.g., `q0 _ 1 R q0` writes `1`s endlessly without ever repeating a configuration), our simulator ([tm.py](file:///d:/TOC_PROJECT/toc_halting/toc_halting/tm.py)) outputs three distinct statuses:
+Because non-halting machines cannot always be detected (e.g., `q0 _ 1 R q0` writes `1`s endlessly without ever repeating a configuration), our simulator ([tm.py](tm.py)) outputs three distinct statuses:
 
 | Simulator Status | Meaning | Decidability Guarantee |
 |---|---|---|
@@ -35,12 +35,12 @@ Because non-halting machines cannot always be detected (e.g., `q0 _ 1 R q0` writ
 
 ## 3. System Architecture & Dataset
 
-### 3.1 Simulator & Interactive Lab ([tm.py](file:///d:/TOC_PROJECT/toc_halting/toc_halting/tm.py), [app.py](file:///d:/TOC_PROJECT/toc_halting/toc_halting/app.py))
+### 3.1 Simulator & Interactive Lab ([tm.py](tm.py), [app.py](app.py))
 - **Tape model:** Sparse infinite tape (`dict[int, str]`) supporting negative and positive cell indices, configurable blank symbol and start state, and custom single-character tape alphabets.
 - **Cycle detection:** Supports both fast 64-bit incremental Zobrist tape hashing and exact canonical `(state, head, frozenset(tape.items()))` verification (`exact_loop_check=True`).
 - **Interactive Streamlit UI:** 4 tabs — step-through simulator with live Graphviz state transition diagram, multi-model halting predictor (`Decision Tree`, `Random Forest`, `Neural Net (MLP)`) with batch evaluator, experimental plots/tables, and theory notes.
 
-### 3.2 Datasets ([dataset_random.csv](file:///d:/TOC_PROJECT/toc_halting/toc_halting/results/dataset_random.csv), [dataset_hard.csv](file:///d:/TOC_PROJECT/toc_halting/toc_halting/results/dataset_hard.csv))
+### 3.2 Datasets ([dataset_random.csv](results/dataset_random.csv), [dataset_hard.csv](results/dataset_hard.csv))
 Each dataset contains **6,000 deduplicated `(machine, input)` pairs** storing the serialized transition rules (`rules`), `input_str`, 10-step `probe_trace`, extracted features, ground-truth `status` up to `MAX_LIMIT = 1000`, and `halt_step`:
 
 | Population | Machine Distribution | Halted | Looping | Limit (1000) | Purpose |
@@ -48,13 +48,13 @@ Each dataset contains **6,000 deduplicated `(machine, input)` pairs** storing th
 | `random` | 2–6 states, `p_halt ∈ [0.03, 0.30]` | 3,315 (55.3%) | 326 (5.4%) | 2,359 (39.3%) | Baseline behavior of unfiltered random TMs |
 | `hard` | 4–10 states, `p_halt ∈ [0.001, 0.04]`, `allow_stay` 25%, filtered to `limit` at step 10 | 198 (3.3%) | 396 (6.6%) | 5,406 (90.1%) | Non-trivial slow halters unresolved after 10 steps |
 
-### 3.3 Feature Engineering ([features.py](file:///d:/TOC_PROJECT/toc_halting/toc_halting/features.py))
+### 3.3 Feature Engineering ([features.py](features.py))
 - **19 Static features** (no execution): state/rule counts, `alphabet_size`, transition ratios (`frac_to_halt`, `frac_move_right`, `frac_move_stay`, `frac_write_blank`, `frac_self_loop`), structural motifs (`sweepers_right`, `sweepers_left`, `runaway_writers`), BFS state-graph reachability (`reachable_states`, `dist_to_halt`, `halting_rules_reachable`, `start_halting_rules`), and input descriptors (`input_len`, `input_nonblank`, `input_unique_symbols`, `input_ones`).
 - **8 Probe features** (`PROBE_STEPS = 10`): `probe_halted`, `probe_looping`, `probe_steps`, `probe_distinct_states`, `probe_head_span`, `probe_net_move`, `probe_nonblank_cells`, `probe_tape_growth`.
 
 ---
 
-## 4. Experimental Methodology ([experiment.py](file:///d:/TOC_PROJECT/toc_halting/toc_halting/experiment.py), [ml_models.py](file:///d:/TOC_PROJECT/toc_halting/toc_halting/ml_models.py))
+## 4. Experimental Methodology ([experiment.py](experiment.py), [ml_models.py](ml_models.py))
 
 - **Models:**
   1. **Decision Tree** (`max_depth=8`, `class_weight="balanced"`)
@@ -119,7 +119,7 @@ On `hard` cases, both baselines score **0.000 F1** (`0.033` PR-AUC) at $L \ge 25
   - Increasing $k$ from `0` (static only) to `10` raises RF PR-AUC from `0.322` to `0.498` (MLP `0.347` → `0.573`).
   - At `k = 25`, PR-AUC jumps to **`0.982`** (RF) / **`0.980`** (MLP) and F1 reaches **`0.920–0.923`**. At `k = 50`, DT and RF reach **`1.000` F1**, reflecting that almost all random slow halters terminate before step 50.
 
-### 5.5 Out-of-Distribution Classic Machines ([ood_benchmarks.csv](file:///d:/TOC_PROJECT/toc_halting/toc_halting/results/ood_benchmarks.csv))
+### 5.5 Out-of-Distribution Classic Machines ([ood_benchmarks.csv](results/ood_benchmarks.csv))
 Evaluated at $L = 250$:
 - **Fast algorithmic halters** (`Binary incrementer`, `Custom symbols a/b: flip & halt`): All `random`-trained models predict halting with `0.98–1.00` probability; `hard`-trained models under-predict because they were trained exclusively on machines that did *not* halt within 10 steps.
 - **Slow Busy Beaver champions** (`3-state busy beaver` halts at step 14; `4-state busy beaver` halts at step 107): `random`-trained models fail (`0.01–0.07` probability) because anything unresolved at step 10 in `random` rarely halts. Conversely, **`hard`-trained Decision Tree** assigns **`0.883`** to both BB(3) and BB(4), and **`hard`-trained Random Forest** assigns **`0.508`** to BB(4) (correctly flagging it to halt within 250 steps).
@@ -138,7 +138,7 @@ Evaluated at $L = 250$:
 
 ## 7. Verification & Reproducibility
 
-- **Unit tests:** `pytest tests -v` passes **9/9 tests** ([test_tm_and_features.py](file:///d:/TOC_PROJECT/toc_halting/toc_halting/tests/test_tm_and_features.py), [test_ml_models.py](file:///d:/TOC_PROJECT/toc_halting/toc_halting/tests/test_ml_models.py)), verifying BB(3)=14 steps / 6 ones, BB(4)=107 steps / 13 ones, exact cycle detection vs Zobrist hashing, missing-rule halting, custom start/blank symbols, and `BalancedMLP` imbalance handling.
+- **Unit tests:** `pytest tests -v` passes **13/13 tests** ([test_tm_and_features.py](tests/test_tm_and_features.py), [test_ml_models.py](tests/test_ml_models.py), [test_app.py](tests/test_app.py)), verifying BB(3)=14 steps / 6 ones, BB(4)=107 steps / 13 ones, exact cycle detection vs Zobrist hashing, missing-rule halting, custom start/blank symbols, and `BalancedMLP` imbalance handling, plus headless Streamlit smoke tests that render every preset with the correct verdict and run the batch evaluator.
 - **Reproduce all results:**
   ```bash
   python experiment.py

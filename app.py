@@ -21,6 +21,7 @@ from tm import (
     random_input,
     random_machine,
     run,
+    sample_machine,
     to_dot,
 )
 
@@ -166,11 +167,19 @@ with tab_sim:
     with right_col:
         st.markdown("**State transition diagram**")
         if len(tm.transitions) <= 45:
-            st.graphviz_chart(to_dot(tm, active_state=s_state), use_container_width=True)
+            st.graphviz_chart(to_dot(tm, active_state=s_state), width="stretch")
         else:
             st.info(f"Diagram omitted for large transition tables ({len(tm.transitions)} rules).")
 
 # -------------------------------------------------------------- prediction
+def model_verdict(clf, X: np.ndarray) -> tuple[float, bool]:
+    """(probability of 'halts within L', yes/no decision).
+
+    The decision uses the model's own predict(): the MLP has a tuned threshold, not 0.5.
+    """
+    return prob_pos(clf, X), bool(clf.predict(X)[0])
+
+
 with tab_pred:
     bundle = load_models()
     if bundle is None:
@@ -188,34 +197,50 @@ with tab_pred:
         primary_model = ctrl3.selectbox("Primary model (for batch test)", MODEL_NAMES, index=1)
 
         feats = all_features(tm, input_str)
-        X = pd.DataFrame([[feats[c] for c in bundle["cols"]]], columns=bundle["cols"])
+        X = np.array([[feats[c] for c in bundle["cols"]]])
         truth = run(tm, input_str, L, exact_loop_check=True)
         actual = truth.status == "halted"
 
         st.subheader("Model predictions vs. simulation ground truth")
         cols_ui = st.columns(4)
         for idx, m_name in enumerate(MODEL_NAMES):
-            clf = bundle["models"][pop_choice][m_name][L]
-            p_m = prob_pos(clf, X.values)
-            guess_m = p_m >= 0.5
+            p_m, guess_m = model_verdict(bundle["models"][pop_choice][m_name][L], X)
             with cols_ui[idx]:
-                st.metric(m_name, f"{p_m:.0%}", delta="halts" if guess_m else "not within L")
-                st.caption("Matches truth" if guess_m == actual else "Disagrees with truth")
+                st.metric(m_name, f"{p_m:.0%}", delta="halts within L" if guess_m else "not within L")
+                st.caption("Matches simulation" if guess_m == actual else "Disagrees with simulation")
         with cols_ui[3]:
-            st.markdown("**Ground truth**")
+            st.markdown("**Ground truth (simulation)**")
             k, m = describe(truth, L)
             getattr(st, k)(m)
 
         if pop_choice == "hard" and L == 10:
-            st.info("Note: by definition, 'hard' training machines never halt within 10 steps, so hard-trained models output 0% at L=10.")
+            st.info("By construction no 'hard' training machine halts within 10 steps, "
+                    "so the hard-trained models always answer 'not within 10' here.")
 
         st.caption(
-            f"Models compare transition-table statistics + a {PROBE_STEPS}-step probe. "
+            f"Models see transition-table statistics + a {PROBE_STEPS}-step probe run. "
             "ML is a heuristic triage signal, never a proof; simulation stays the ground truth."
         )
 
+        # Same machine, every step limit: where do the models agree with simulation?
+        st.markdown("**This machine at every step limit**")
+        full = run(tm, input_str, max(LIMITS), exact_loop_check=True)
+        table = []
+        for lim in LIMITS:
+            sim = run(tm, input_str, lim, exact_loop_check=True)
+            row = {"L": lim, "simulation": {"halted": "halts within L", "looping": "provably never halts",
+                                            "limit": "not halted within L"}[sim.status]}
+            for m_name in MODEL_NAMES:
+                p_m, g_m = model_verdict(bundle["models"][pop_choice][m_name][lim], X)
+                ok = "✓" if g_m == (sim.status == "halted") else "✗"
+                row[m_name] = f"{'halts' if g_m else 'not within L'} ({p_m:.0%}) {ok}"
+            table.append(row)
+        st.dataframe(pd.DataFrame(table), width="stretch", hide_index=True)
+        if full.status == "halted":
+            st.caption(f"Simulation: this machine halts at step {full.steps}.")
+
         with st.expander("Features fed to the models"):
-            feat_df = X.T.rename(columns={0: "value"})
+            feat_df = pd.DataFrame(X.T, index=bundle["cols"], columns=["value"])
             if "feature_importance" in bundle:
                 fi = bundle["feature_importance"]
                 fi_sub = fi[fi["population"] == pop_choice][["feature", "importance"]].set_index("feature")
@@ -226,27 +251,33 @@ with tab_pred:
         st.subheader("Batch test on fresh unseen machines")
         b1, b2 = st.columns(2)
         n_batch = b1.slider("Number of machines", 50, 1000, 300, step=50)
-        batch_pop = b2.radio("Test generator", ["random", "hard"], horizontal=True)
+        batch_pop = b2.radio(
+            "Test generator",
+            ["hard", "random"],
+            index=0 if pop_choice == "hard" else 1,
+            horizontal=True,
+            key=f"batch_pop::{pop_choice}",
+            help="Defaults to the same distribution the selected models were trained on.",
+        )
+        if batch_pop != pop_choice:
+            st.warning(
+                f"Distribution shift: models trained on **{pop_choice}** machines are being "
+                f"tested on **{batch_pop}** machines. Expect degraded accuracy "
+                "(see the out-of-distribution discussion in the report)."
+            )
         if st.button("Run batch test"):
-            rng = random.Random(987654)
+            rng = random.Random(987654)  # differs from the training seeds -> unseen machines
+            clf = bundle["models"][pop_choice][primary_model][L]
             rows = []
             while len(rows) < n_batch:
-                if batch_pop == "hard":
-                    m = random_machine(
-                        rng.randint(4, 10), rng, p_halt_range=(0.001, 0.04), allow_stay=rng.random() < 0.25
-                    )
-                    i = random_input(rng)
-                    if run(m, i, PROBE_STEPS).status != "limit":
-                        continue
-                else:
-                    m = random_machine(rng.randint(2, 6), rng)
-                    i = random_input(rng)
+                m = sample_machine(rng, batch_pop)
+                i = random_input(rng)
+                if batch_pop == "hard" and run(m, i, PROBE_STEPS).status != "limit":
+                    continue  # hard population = unresolved after the probe
                 f = all_features(m, i)
-                xp = pd.DataFrame([[f[c] for c in bundle["cols"]]], columns=bundle["cols"]).values
-                clf = bundle["models"][pop_choice][primary_model][L]
-                pr = int(prob_pos(clf, xp) >= 0.5)
-                t = int(run(m, i, L).status == "halted")
-                rows.append((t, pr, int(f["probe_halted"])))
+                xp = np.array([[f[c] for c in bundle["cols"]]])
+                truth_b = int(run(m, i, L).status == "halted")
+                rows.append((truth_b, int(clf.predict(xp)[0]), int(f["probe_halted"])))
             d = pd.DataFrame(rows, columns=["actual", "ml", "rule"])
 
             m1, m2, m3, m4 = st.columns(4)
@@ -254,6 +285,11 @@ with tab_pred:
             m2.metric(f"{primary_model} F1", f"{f1_score(d.actual, d.ml, zero_division=0):.3f}")
             m3.metric(f"Rule ({PROBE_STEPS} steps) accuracy", f"{accuracy_score(d.actual, d.rule):.1%}")
             m4.metric(f"Rule ({PROBE_STEPS} steps) F1", f"{f1_score(d.actual, d.rule, zero_division=0):.3f}")
+            st.caption(
+                f"{primary_model}: precision {precision_score(d.actual, d.ml, zero_division=0):.3f}, "
+                f"recall {recall_score(d.actual, d.ml, zero_division=0):.3f}; "
+                f"{int(d.actual.sum())} of {len(d)} machines actually halt within {L} steps."
+            )
 
             st.write(f"Confusion matrix ({primary_model}):")
             st.dataframe(
@@ -265,47 +301,50 @@ with tab_pred:
             )
 
 # ------------------------------------------------------------- experiments
+FIGURES = [
+    ("accuracy_vs_limit.png", "1. Prediction quality vs step limit L (mean ± std over 5 seeds)"),
+    ("hard_cases.png", "2. Hard cases (unresolved after the probe): F1, PR-AUC and number of slow halters"),
+    ("accuracy_vs_complexity.png", "3. Generalising to unseen, bigger machines"),
+    ("feature_importance.png", "4. Random Forest feature importance"),
+    ("probe_sweep.png", "5. Effect of the probe budget k"),
+    ("mlp_ablation.png", "6. Fixing the neural network on imbalanced data"),
+    ("ood_heatmap.png", "7. Out-of-distribution: busy beavers and hand-written machines"),
+]
+
 with tab_exp:
     res_df = load_csv("results_summary.csv")
     if res_df is None:
-        res_df = load_csv("results.csv")
-    if res_df is None:
         st.warning("No results yet. Run `python experiment.py`.")
     else:
-        st.subheader("1. Random population: accuracy vs step limit (3 seeds)")
-        st.image(str(RESULTS / "accuracy_vs_limit.png"))
+        for fname, title in FIGURES:
+            if (RESULTS / fname).exists():
+                st.subheader(title)
+                st.image(str(RESULTS / fname))
 
-        st.subheader("2. Hard cases (unresolved after probe): F1, PR-AUC & slow halters")
-        st.image(str(RESULTS / "hard_cases.png"))
-
-        st.subheader("3. Generalizing to unseen machine sizes")
-        st.image(str(RESULTS / "accuracy_vs_complexity.png"))
-
-        col_e1, col_e2 = st.columns(2)
-        with col_e1:
-            if (RESULTS / "feature_importance.png").exists():
-                st.subheader("4. Top predictive features")
-                st.image(str(RESULTS / "feature_importance.png"))
-        with col_e2:
-            if (RESULTS / "probe_sweep.png").exists():
-                st.subheader("5. Effect of probe budget k")
-                st.image(str(RESULTS / "probe_sweep.png"))
+        st.subheader("Results table (mean ± std over seeds)")
+        e1, e2 = st.columns(2)
+        pop = e1.radio("Population", ["random", "hard"], horizontal=True, key="exp_pop")
+        lim = e2.select_slider("Step limit", options=LIMITS, value=250, key="exp_L")
+        show = res_df[(res_df["population"] == pop) & (res_df["limit"] == lim)]
+        metric_cols = ["accuracy", "precision", "recall", "f1", "roc_auc", "pr_auc"]
+        table = show[["features", "model"]].copy()
+        for mcol in metric_cols:
+            table[mcol] = [f"{a:.3f} ± {0 if pd.isna(b) else b:.3f}" if not pd.isna(a) else "n/a"
+                           for a, b in zip(show[f"{mcol}_mean"], show[f"{mcol}_std"])]
+        table["test positives"] = show["n_pos_test"].round(0).astype(int).astype(str) + " / " + show["n_test"].round(0).astype(int).astype(str)
+        st.dataframe(table, width="stretch", hide_index=True)
 
         ood_df = load_csv("ood_benchmarks.csv")
         if ood_df is not None:
-            st.subheader("6. Out-of-distribution classic preset machines (L = 250)")
-            ood_250 = ood_df[ood_df["limit"] == 250]
-            st.dataframe(ood_250.round(3), width="stretch", hide_index=True)
-
-        st.subheader("Multi-seed summary table")
-        pop = st.radio("Population", ["random", "hard"], horizontal=True, key="exp_pop")
-        show = res_df[res_df["population"] == pop].drop(columns=["population"])
-        st.dataframe(show.round(3), width="stretch", hide_index=True)
-
+            with st.expander("Out-of-distribution table (all step limits)"):
+                st.dataframe(ood_df.round(3), width="stretch", hide_index=True)
         cx_df = load_csv("complexity.csv")
         if cx_df is not None:
-            with st.expander("Complexity generalization table (all models)"):
+            with st.expander("Complexity generalisation table (per seed)"):
                 st.dataframe(cx_df.round(3), width="stretch", hide_index=True)
+        if (RESULTS / "summary.md").exists():
+            with st.expander("All key numbers (results/summary.md)"):
+                st.markdown((RESULTS / "summary.md").read_text(encoding="utf-8"))
 
 # ------------------------------------------------------------------ theory
 with tab_theory:

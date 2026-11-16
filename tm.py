@@ -259,6 +259,40 @@ PRESETS = {
         "q3 _ 1 R q3\nq3 1 _ R q0",
         "",
     ),
+    "2-state busy beaver (halts)": (
+        "# Classic 2-state 2-symbol champion (writes four 1s in 6 steps).\n"
+        "q0 _ 1 R q1\nq0 1 1 L q1\n"
+        "q1 _ 1 L q0\nq1 1 1 R H",
+        "",
+    ),
+    "Unary addition 111+11 (halts)": (
+        "# Adds two unary numbers: 111+11 -> 11111.\n"
+        "# Replace '+' by 1, run to the end, then erase one trailing 1.\n"
+        "q0 1 1 R q0\nq0 + 1 R q1\n"
+        "q1 1 1 R q1\nq1 _ _ L q2\n"
+        "q2 1 _ S H",
+        "111+11",
+    ),
+    "Binary palindrome checker (halts, writes Y/N)": (
+        "# Repeatedly erases the first and last symbol and checks that they match.\n"
+        "# Halts writing Y (palindrome) or N (not a palindrome). O(n^2) steps.\n"
+        "q0 0 _ R q1\nq0 1 _ R q2\nq0 _ Y S H\n"
+        "q1 0 0 R q1\nq1 1 1 R q1\nq1 _ _ L q3\n"
+        "q2 0 0 R q2\nq2 1 1 R q2\nq2 _ _ L q4\n"
+        "q3 0 _ L q5\nq3 1 N S H\nq3 _ Y S H\n"
+        "q4 1 _ L q5\nq4 0 N S H\nq4 _ Y S H\n"
+        "q5 0 0 L q5\nq5 1 1 L q5\nq5 _ _ R q0",
+        "1011101",
+    ),
+    "Binary countdown to zero (slow halter)": (
+        "# Decrements a binary number until it reaches 0, then halts.\n"
+        "# Running time grows with the VALUE of the input, so it halts late.\n"
+        "q0 0 0 R q0\nq0 1 1 R q1\nq0 _ _ S H\n"
+        "q1 0 0 R q1\nq1 1 1 R q1\nq1 _ _ L q2\n"
+        "q2 0 1 L q2\nq2 1 0 L q3\n"
+        "q3 0 0 L q3\nq3 1 1 L q3\nq3 _ _ R q0",
+        "1100",
+    ),
     "Custom symbols a/b: flip & halt": (
         "# Demonstrates custom tape symbols beyond 0/1: swaps a <-> b and halts.\n"
         "q0 a b R q0\nq0 b a R q0\nq0 _ _ S H",
@@ -274,6 +308,14 @@ PRESETS = {
         "# configuration repeats: the simulator can only say 'limit reached'.\n"
         "q0 _ 1 R q0",
         "",
+    ),
+    "Binary counter (counts forever, never halts)": (
+        "# Increments a binary number forever. The number keeps growing, so no\n"
+        "# configuration ever repeats: a structured non-halter the simulator\n"
+        "# can only report as 'limit reached'.\n"
+        "q0 0 0 R q0\nq0 1 1 R q0\nq0 _ _ L q1\n"
+        "q1 1 0 L q1\nq1 0 1 R q0\nq1 _ 1 R q0",
+        "0",
     ),
 }
 
@@ -303,3 +345,21 @@ def random_machine(
 
 def random_input(rng: random.Random, max_len: int = 8) -> str:
     return "".join(rng.choice("01") for _ in range(rng.randint(0, max_len)))
+
+
+# The two machine populations studied in experiment.py (also used by the app's
+# batch test, so the app always tests on the same distributions the models saw).
+#   random : small machines with a fairly high chance of halting rules
+#   hard   : bigger machines with fewer halting rules; callers additionally keep only
+#            pairs that are still unresolved after the cheap probe run
+RANDOM_STATES, RANDOM_P_HALT = (2, 6), (0.03, 0.30)
+HARD_STATES, HARD_P_HALT = (4, 10), (0.01, 0.12)
+
+
+def sample_machine(rng: random.Random, population: str) -> TuringMachine:
+    """Draw one random machine from the 'random' or 'hard' population."""
+    if population == "hard":
+        return random_machine(
+            rng.randint(*HARD_STATES), rng, p_halt_range=HARD_P_HALT, allow_stay=rng.random() < 0.25
+        )
+    return random_machine(rng.randint(*RANDOM_STATES), rng, p_halt_range=RANDOM_P_HALT)

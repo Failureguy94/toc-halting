@@ -8,12 +8,29 @@ See [REPORT.md](REPORT.md) for the full experimental report.
 
 ## Quickstart
 
+Requires Python 3.10+.
+
+**Linux / macOS**
+
 ```bash
-# Using the project virtual environment (Windows)
-.venv\Scripts\python -m pytest tests -v   # run unit tests
-.venv\Scripts\python experiment.py        # datasets, multi-seed ML evaluation, plots, models
-.venv\Scripts\streamlit run app.py        # interactive simulator & predictor
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python -m pytest tests -v       # run unit tests (simulator, features, models, app)
+.venv/bin/python experiment.py            # datasets, multi-seed ML evaluation, plots, models
+.venv/bin/streamlit run app.py            # interactive simulator & predictor
 ```
+
+**Windows**
+
+```bat
+python -m venv .venv
+.venv\Scripts\pip install -r requirements.txt
+.venv\Scripts\python -m pytest tests -v
+.venv\Scripts\python experiment.py
+.venv\Scripts\streamlit run app.py
+```
+
+`experiment.py --n 2000` runs a quicker, smaller version of the full pipeline.
 
 Pre-computed datasets, models, and plots are already included in `results/`, so `app.py` runs immediately.
 
@@ -26,7 +43,7 @@ Pre-computed datasets, models, and plots are already included in `results/`, so 
 | `ml_models.py` | Decision Tree, Random Forest, and `BalancedMLP` (with training-fold minority oversampling) |
 | `experiment.py` | Dataset generation (with rules, inputs & traces), 3-seed evaluation, complexity & probe-sweep studies, OOD benchmarks, plots |
 | `app.py` | Streamlit app: step-through tape & Graphviz simulator, side-by-side 3-model halting predictor, experiment dashboard, theory notes |
-| `tests/` | Unit tests for simulator semantics, Busy Beavers (3 & 4 states), custom symbols, features, and `BalancedMLP` |
+| `tests/` | Unit tests for simulator semantics, Busy Beavers (3 & 4 states), custom symbols, features, `BalancedMLP`, and headless Streamlit app smoke tests |
 | `REPORT.md` | Formal experimental report covering TOC background, methodology, results, error analysis, and limitations |
 
 ## Key Design Point: Three Outcomes, Not Two

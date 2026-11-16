@@ -1,253 +1,463 @@
-preset,limit,actual_status,actual_halts,train_pop,model,prob_halt,pred_halts,correct
-Binary incrementer (halts),10,halted,1,random,Decision Tree,1.0,1,1
-Binary incrementer (halts),10,halted,1,random,Random Forest,0.9916666666666667,1,1
-Binary incrementer (halts),10,halted,1,random,Neural Net (MLP),0.9852012429268892,1,1
-Binary incrementer (halts),10,halted,1,hard,Decision Tree,0.0,0,0
-Binary incrementer (halts),10,halted,1,hard,Random Forest,0.0,0,0
-Binary incrementer (halts),10,halted,1,hard,Neural Net (MLP),0.0,0,0
-Binary incrementer (halts),25,halted,1,random,Decision Tree,1.0,1,1
-Binary incrementer (halts),25,halted,1,random,Random Forest,0.9916666666666667,1,1
-Binary incrementer (halts),25,halted,1,random,Neural Net (MLP),0.9988365551732105,1,1
-Binary incrementer (halts),25,halted,1,hard,Decision Tree,0.9474987471626893,1,1
-Binary incrementer (halts),25,halted,1,hard,Random Forest,0.23127533732716377,0,0
-Binary incrementer (halts),25,halted,1,hard,Neural Net (MLP),2.1251266232230044e-11,0,0
-Binary incrementer (halts),50,halted,1,random,Decision Tree,1.0,1,1
-Binary incrementer (halts),50,halted,1,random,Random Forest,1.0,1,1
-Binary incrementer (halts),50,halted,1,random,Neural Net (MLP),0.997519060556787,1,1
-Binary incrementer (halts),50,halted,1,hard,Decision Tree,0.9283979125294486,1,1
-Binary incrementer (halts),50,halted,1,hard,Random Forest,0.19735498392312806,0,0
-Binary incrementer (halts),50,halted,1,hard,Neural Net (MLP),7.34531455270863e-05,0,0
-Binary incrementer (halts),100,halted,1,random,Decision Tree,1.0,1,1
-Binary incrementer (halts),100,halted,1,random,Random Forest,0.9833333333333333,1,1
-Binary incrementer (halts),100,halted,1,random,Neural Net (MLP),0.9974791771967355,1,1
-Binary incrementer (halts),100,halted,1,hard,Decision Tree,0.0,0,0
-Binary incrementer (halts),100,halted,1,hard,Random Forest,0.203905402668116,0,0
-Binary incrementer (halts),100,halted,1,hard,Neural Net (MLP),8.207975221973811e-14,0,0
-Binary incrementer (halts),250,halted,1,random,Decision Tree,1.0,1,1
-Binary incrementer (halts),250,halted,1,random,Random Forest,0.9833333333333333,1,1
-Binary incrementer (halts),250,halted,1,random,Neural Net (MLP),0.9974791771967355,1,1
-Binary incrementer (halts),250,halted,1,hard,Decision Tree,0.0,0,0
-Binary incrementer (halts),250,halted,1,hard,Random Forest,0.2783663792138867,0,0
-Binary incrementer (halts),250,halted,1,hard,Neural Net (MLP),7.586276029059862e-12,0,0
-Binary incrementer (halts),500,halted,1,random,Decision Tree,1.0,1,1
-Binary incrementer (halts),500,halted,1,random,Random Forest,0.9833333333333333,1,1
-Binary incrementer (halts),500,halted,1,random,Neural Net (MLP),0.9974791771967355,1,1
-Binary incrementer (halts),500,halted,1,hard,Decision Tree,0.0,0,0
-Binary incrementer (halts),500,halted,1,hard,Random Forest,0.27836637921388657,0,0
-Binary incrementer (halts),500,halted,1,hard,Neural Net (MLP),7.586276029059862e-12,0,0
-Binary incrementer (halts),1000,halted,1,random,Decision Tree,1.0,1,1
-Binary incrementer (halts),1000,halted,1,random,Random Forest,0.9833333333333333,1,1
-Binary incrementer (halts),1000,halted,1,random,Neural Net (MLP),0.9974791771967355,1,1
-Binary incrementer (halts),1000,halted,1,hard,Decision Tree,0.0,0,0
-Binary incrementer (halts),1000,halted,1,hard,Random Forest,0.2783663792138867,0,0
-Binary incrementer (halts),1000,halted,1,hard,Neural Net (MLP),7.586276029059862e-12,0,0
-3-state busy beaver (halts),10,limit,0,random,Decision Tree,0.0,0,1
-3-state busy beaver (halts),10,limit,0,random,Random Forest,0.008333333333333333,0,1
-3-state busy beaver (halts),10,limit,0,random,Neural Net (MLP),0.05494191220568735,0,1
-3-state busy beaver (halts),10,limit,0,hard,Decision Tree,0.0,0,1
-3-state busy beaver (halts),10,limit,0,hard,Random Forest,0.0,0,1
-3-state busy beaver (halts),10,limit,0,hard,Neural Net (MLP),0.0,0,1
-3-state busy beaver (halts),25,halted,1,random,Decision Tree,0.023199426111908228,0,0
-3-state busy beaver (halts),25,halted,1,random,Random Forest,0.02777777777777778,0,0
-3-state busy beaver (halts),25,halted,1,random,Neural Net (MLP),0.020028237712141937,0,0
-3-state busy beaver (halts),25,halted,1,hard,Decision Tree,0.9474987471626893,1,1
-3-state busy beaver (halts),25,halted,1,hard,Random Forest,0.137004975996523,0,0
-3-state busy beaver (halts),25,halted,1,hard,Neural Net (MLP),0.10123928444538212,0,0
-3-state busy beaver (halts),50,halted,1,random,Decision Tree,0.02307758373890643,0,0
-3-state busy beaver (halts),50,halted,1,random,Random Forest,0.025,0,0
-3-state busy beaver (halts),50,halted,1,random,Neural Net (MLP),0.020039546434707355,0,0
-3-state busy beaver (halts),50,halted,1,hard,Decision Tree,0.9283979125294486,1,1
-3-state busy beaver (halts),50,halted,1,hard,Random Forest,0.16933766665652122,0,0
-3-state busy beaver (halts),50,halted,1,hard,Neural Net (MLP),1.5103331522981018e-05,0,0
-3-state busy beaver (halts),100,halted,1,random,Decision Tree,0.02304721030042921,0,0
-3-state busy beaver (halts),100,halted,1,random,Random Forest,0.010185185185185184,0,0
-3-state busy beaver (halts),100,halted,1,random,Neural Net (MLP),0.025278927030524468,0,0
-3-state busy beaver (halts),100,halted,1,hard,Decision Tree,0.8809957498482061,1,1
-3-state busy beaver (halts),100,halted,1,hard,Random Forest,0.13654562098364223,0,0
-3-state busy beaver (halts),100,halted,1,hard,Neural Net (MLP),8.160103803389328e-07,0,0
-3-state busy beaver (halts),250,halted,1,random,Decision Tree,0.02304721030042921,0,0
-3-state busy beaver (halts),250,halted,1,random,Random Forest,0.010185185185185184,0,0
-3-state busy beaver (halts),250,halted,1,random,Neural Net (MLP),0.025278927030524468,0,0
-3-state busy beaver (halts),250,halted,1,hard,Decision Tree,0.8834757271964054,1,1
-3-state busy beaver (halts),250,halted,1,hard,Random Forest,0.11341018959248422,0,0
-3-state busy beaver (halts),250,halted,1,hard,Neural Net (MLP),1.76218339267167e-05,0,0
-3-state busy beaver (halts),500,halted,1,random,Decision Tree,0.02304721030042921,0,0
-3-state busy beaver (halts),500,halted,1,random,Random Forest,0.010185185185185184,0,0
-3-state busy beaver (halts),500,halted,1,random,Neural Net (MLP),0.025278927030524468,0,0
-3-state busy beaver (halts),500,halted,1,hard,Decision Tree,0.8834757271964054,1,1
-3-state busy beaver (halts),500,halted,1,hard,Random Forest,0.11341018959248422,0,0
-3-state busy beaver (halts),500,halted,1,hard,Neural Net (MLP),1.76218339267167e-05,0,0
-3-state busy beaver (halts),1000,halted,1,random,Decision Tree,0.02304721030042921,0,0
-3-state busy beaver (halts),1000,halted,1,random,Random Forest,0.010185185185185184,0,0
-3-state busy beaver (halts),1000,halted,1,random,Neural Net (MLP),0.025278927030524468,0,0
-3-state busy beaver (halts),1000,halted,1,hard,Decision Tree,0.8834757271964054,1,1
-3-state busy beaver (halts),1000,halted,1,hard,Random Forest,0.11341018959248422,0,0
-3-state busy beaver (halts),1000,halted,1,hard,Neural Net (MLP),1.76218339267167e-05,0,0
-4-state busy beaver (halts in 107 steps),10,limit,0,random,Decision Tree,0.0,0,1
-4-state busy beaver (halts in 107 steps),10,limit,0,random,Random Forest,0.0,0,1
-4-state busy beaver (halts in 107 steps),10,limit,0,random,Neural Net (MLP),0.03107393596664477,0,1
-4-state busy beaver (halts in 107 steps),10,limit,0,hard,Decision Tree,0.0,0,1
-4-state busy beaver (halts in 107 steps),10,limit,0,hard,Random Forest,0.0,0,1
-4-state busy beaver (halts in 107 steps),10,limit,0,hard,Neural Net (MLP),0.0,0,1
-4-state busy beaver (halts in 107 steps),25,limit,0,random,Decision Tree,0.2610947572381412,0,1
-4-state busy beaver (halts in 107 steps),25,limit,0,random,Random Forest,0.04325520833333333,0,1
-4-state busy beaver (halts in 107 steps),25,limit,0,random,Neural Net (MLP),0.056980739442495335,0,1
-4-state busy beaver (halts in 107 steps),25,limit,0,hard,Decision Tree,0.9474987471626893,1,0
-4-state busy beaver (halts in 107 steps),25,limit,0,hard,Random Forest,0.5576009815746666,1,0
-4-state busy beaver (halts in 107 steps),25,limit,0,hard,Neural Net (MLP),0.5331822797418927,1,0
-4-state busy beaver (halts in 107 steps),50,limit,0,random,Decision Tree,0.19458022334983396,0,1
-4-state busy beaver (halts in 107 steps),50,limit,0,random,Random Forest,0.09246031746031745,0,1
-4-state busy beaver (halts in 107 steps),50,limit,0,random,Neural Net (MLP),0.02476474522490247,0,1
-4-state busy beaver (halts in 107 steps),50,limit,0,hard,Decision Tree,0.9283979125294486,1,0
-4-state busy beaver (halts in 107 steps),50,limit,0,hard,Random Forest,0.4474400008493992,0,1
-4-state busy beaver (halts in 107 steps),50,limit,0,hard,Neural Net (MLP),0.0052119779615698155,0,1
-4-state busy beaver (halts in 107 steps),100,limit,0,random,Decision Tree,0.2125890736342044,0,1
-4-state busy beaver (halts in 107 steps),100,limit,0,random,Random Forest,0.065625,0,1
-4-state busy beaver (halts in 107 steps),100,limit,0,random,Neural Net (MLP),0.0325098665685531,0,1
-4-state busy beaver (halts in 107 steps),100,limit,0,hard,Decision Tree,0.8809957498482061,1,0
-4-state busy beaver (halts in 107 steps),100,limit,0,hard,Random Forest,0.5024108456623506,1,0
-4-state busy beaver (halts in 107 steps),100,limit,0,hard,Neural Net (MLP),0.057767091638221475,0,1
-4-state busy beaver (halts in 107 steps),250,halted,1,random,Decision Tree,0.2125890736342044,0,0
-4-state busy beaver (halts in 107 steps),250,halted,1,random,Random Forest,0.065625,0,0
-4-state busy beaver (halts in 107 steps),250,halted,1,random,Neural Net (MLP),0.0325098665685531,0,0
-4-state busy beaver (halts in 107 steps),250,halted,1,hard,Decision Tree,0.8834757271964054,1,1
-4-state busy beaver (halts in 107 steps),250,halted,1,hard,Random Forest,0.5077138875388623,1,1
-4-state busy beaver (halts in 107 steps),250,halted,1,hard,Neural Net (MLP),0.04014016892808035,0,0
-4-state busy beaver (halts in 107 steps),500,halted,1,random,Decision Tree,0.2125890736342044,0,0
-4-state busy beaver (halts in 107 steps),500,halted,1,random,Random Forest,0.065625,0,0
-4-state busy beaver (halts in 107 steps),500,halted,1,random,Neural Net (MLP),0.0325098665685531,0,0
-4-state busy beaver (halts in 107 steps),500,halted,1,hard,Decision Tree,0.8834757271964054,1,1
-4-state busy beaver (halts in 107 steps),500,halted,1,hard,Random Forest,0.5077138875388624,1,1
-4-state busy beaver (halts in 107 steps),500,halted,1,hard,Neural Net (MLP),0.04014016892808035,0,0
-4-state busy beaver (halts in 107 steps),1000,halted,1,random,Decision Tree,0.2125890736342044,0,0
-4-state busy beaver (halts in 107 steps),1000,halted,1,random,Random Forest,0.065625,0,0
-4-state busy beaver (halts in 107 steps),1000,halted,1,random,Neural Net (MLP),0.0325098665685531,0,0
-4-state busy beaver (halts in 107 steps),1000,halted,1,hard,Decision Tree,0.8834757271964054,1,1
-4-state busy beaver (halts in 107 steps),1000,halted,1,hard,Random Forest,0.5077138875388623,1,1
-4-state busy beaver (halts in 107 steps),1000,halted,1,hard,Neural Net (MLP),0.04014016892808035,0,0
-Custom symbols a/b: flip & halt,10,halted,1,random,Decision Tree,1.0,1,1
-Custom symbols a/b: flip & halt,10,halted,1,random,Random Forest,1.0,1,1
-Custom symbols a/b: flip & halt,10,halted,1,random,Neural Net (MLP),0.960927252688154,1,1
-Custom symbols a/b: flip & halt,10,halted,1,hard,Decision Tree,0.0,0,0
-Custom symbols a/b: flip & halt,10,halted,1,hard,Random Forest,0.0,0,0
-Custom symbols a/b: flip & halt,10,halted,1,hard,Neural Net (MLP),0.0,0,0
-Custom symbols a/b: flip & halt,25,halted,1,random,Decision Tree,1.0,1,1
-Custom symbols a/b: flip & halt,25,halted,1,random,Random Forest,1.0,1,1
-Custom symbols a/b: flip & halt,25,halted,1,random,Neural Net (MLP),0.9982397959192693,1,1
-Custom symbols a/b: flip & halt,25,halted,1,hard,Decision Tree,0.9474987471626893,1,1
-Custom symbols a/b: flip & halt,25,halted,1,hard,Random Forest,0.21505204411331533,0,0
-Custom symbols a/b: flip & halt,25,halted,1,hard,Neural Net (MLP),8.13733512341522e-09,0,0
-Custom symbols a/b: flip & halt,50,halted,1,random,Decision Tree,1.0,1,1
-Custom symbols a/b: flip & halt,50,halted,1,random,Random Forest,0.9916666666666667,1,1
-Custom symbols a/b: flip & halt,50,halted,1,random,Neural Net (MLP),0.9937150468894079,1,1
-Custom symbols a/b: flip & halt,50,halted,1,hard,Decision Tree,0.9283979125294486,1,1
-Custom symbols a/b: flip & halt,50,halted,1,hard,Random Forest,0.14608380719039962,0,0
-Custom symbols a/b: flip & halt,50,halted,1,hard,Neural Net (MLP),3.4890784330735165e-09,0,0
-Custom symbols a/b: flip & halt,100,halted,1,random,Decision Tree,1.0,1,1
-Custom symbols a/b: flip & halt,100,halted,1,random,Random Forest,1.0,1,1
-Custom symbols a/b: flip & halt,100,halted,1,random,Neural Net (MLP),0.9930704297509763,1,1
-Custom symbols a/b: flip & halt,100,halted,1,hard,Decision Tree,0.0,0,0
-Custom symbols a/b: flip & halt,100,halted,1,hard,Random Forest,0.1540701115928616,0,0
-Custom symbols a/b: flip & halt,100,halted,1,hard,Neural Net (MLP),3.4556363046178035e-18,0,0
-Custom symbols a/b: flip & halt,250,halted,1,random,Decision Tree,1.0,1,1
-Custom symbols a/b: flip & halt,250,halted,1,random,Random Forest,1.0,1,1
-Custom symbols a/b: flip & halt,250,halted,1,random,Neural Net (MLP),0.9930704297509763,1,1
-Custom symbols a/b: flip & halt,250,halted,1,hard,Decision Tree,0.0,0,0
-Custom symbols a/b: flip & halt,250,halted,1,hard,Random Forest,0.16674543935168756,0,0
-Custom symbols a/b: flip & halt,250,halted,1,hard,Neural Net (MLP),1.5166165074017559e-15,0,0
-Custom symbols a/b: flip & halt,500,halted,1,random,Decision Tree,1.0,1,1
-Custom symbols a/b: flip & halt,500,halted,1,random,Random Forest,1.0,1,1
-Custom symbols a/b: flip & halt,500,halted,1,random,Neural Net (MLP),0.9930704297509763,1,1
-Custom symbols a/b: flip & halt,500,halted,1,hard,Decision Tree,0.0,0,0
-Custom symbols a/b: flip & halt,500,halted,1,hard,Random Forest,0.16674543935168756,0,0
-Custom symbols a/b: flip & halt,500,halted,1,hard,Neural Net (MLP),1.5166165074017559e-15,0,0
-Custom symbols a/b: flip & halt,1000,halted,1,random,Decision Tree,1.0,1,1
-Custom symbols a/b: flip & halt,1000,halted,1,random,Random Forest,1.0,1,1
-Custom symbols a/b: flip & halt,1000,halted,1,random,Neural Net (MLP),0.9930704297509763,1,1
-Custom symbols a/b: flip & halt,1000,halted,1,hard,Decision Tree,0.0,0,0
-Custom symbols a/b: flip & halt,1000,halted,1,hard,Random Forest,0.16674543935168756,0,0
-Custom symbols a/b: flip & halt,1000,halted,1,hard,Neural Net (MLP),1.5166165074017559e-15,0,0
-Ping-pong (provably loops),10,looping,0,random,Decision Tree,0.0,0,1
-Ping-pong (provably loops),10,looping,0,random,Random Forest,0.0,0,1
-Ping-pong (provably loops),10,looping,0,random,Neural Net (MLP),0.0021723390206240096,0,1
-Ping-pong (provably loops),10,looping,0,hard,Decision Tree,0.0,0,1
-Ping-pong (provably loops),10,looping,0,hard,Random Forest,0.0,0,1
-Ping-pong (provably loops),10,looping,0,hard,Neural Net (MLP),0.0,0,1
-Ping-pong (provably loops),25,looping,0,random,Decision Tree,0.0,0,1
-Ping-pong (provably loops),25,looping,0,random,Random Forest,0.0,0,1
-Ping-pong (provably loops),25,looping,0,random,Neural Net (MLP),8.207443054654772e-06,0,1
-Ping-pong (provably loops),25,looping,0,hard,Decision Tree,0.0,0,1
-Ping-pong (provably loops),25,looping,0,hard,Random Forest,0.0,0,1
-Ping-pong (provably loops),25,looping,0,hard,Neural Net (MLP),3.337076675843826e-30,0,1
-Ping-pong (provably loops),50,looping,0,random,Decision Tree,0.0,0,1
-Ping-pong (provably loops),50,looping,0,random,Random Forest,0.0,0,1
-Ping-pong (provably loops),50,looping,0,random,Neural Net (MLP),9.055449728118497e-05,0,1
-Ping-pong (provably loops),50,looping,0,hard,Decision Tree,0.0,0,1
-Ping-pong (provably loops),50,looping,0,hard,Random Forest,0.0,0,1
-Ping-pong (provably loops),50,looping,0,hard,Neural Net (MLP),3.790738363523467e-25,0,1
-Ping-pong (provably loops),100,looping,0,random,Decision Tree,0.0,0,1
-Ping-pong (provably loops),100,looping,0,random,Random Forest,0.0,0,1
-Ping-pong (provably loops),100,looping,0,random,Neural Net (MLP),0.0001789515057105973,0,1
-Ping-pong (provably loops),100,looping,0,hard,Decision Tree,0.0,0,1
-Ping-pong (provably loops),100,looping,0,hard,Random Forest,0.0,0,1
-Ping-pong (provably loops),100,looping,0,hard,Neural Net (MLP),4.5129411924417336e-39,0,1
-Ping-pong (provably loops),250,looping,0,random,Decision Tree,0.0,0,1
-Ping-pong (provably loops),250,looping,0,random,Random Forest,0.0,0,1
-Ping-pong (provably loops),250,looping,0,random,Neural Net (MLP),0.0001789515057105973,0,1
-Ping-pong (provably loops),250,looping,0,hard,Decision Tree,0.0,0,1
-Ping-pong (provably loops),250,looping,0,hard,Random Forest,0.0,0,1
-Ping-pong (provably loops),250,looping,0,hard,Neural Net (MLP),6.195019943297176e-33,0,1
-Ping-pong (provably loops),500,looping,0,random,Decision Tree,0.0,0,1
-Ping-pong (provably loops),500,looping,0,random,Random Forest,0.0,0,1
-Ping-pong (provably loops),500,looping,0,random,Neural Net (MLP),0.0001789515057105973,0,1
-Ping-pong (provably loops),500,looping,0,hard,Decision Tree,0.0,0,1
-Ping-pong (provably loops),500,looping,0,hard,Random Forest,0.0,0,1
-Ping-pong (provably loops),500,looping,0,hard,Neural Net (MLP),6.195019943297176e-33,0,1
-Ping-pong (provably loops),1000,looping,0,random,Decision Tree,0.0,0,1
-Ping-pong (provably loops),1000,looping,0,random,Random Forest,0.0,0,1
-Ping-pong (provably loops),1000,looping,0,random,Neural Net (MLP),0.0001789515057105973,0,1
-Ping-pong (provably loops),1000,looping,0,hard,Decision Tree,0.0,0,1
-Ping-pong (provably loops),1000,looping,0,hard,Random Forest,0.0,0,1
-Ping-pong (provably loops),1000,looping,0,hard,Neural Net (MLP),6.195019943297176e-33,0,1
-"Run-away right (never halts, but not provable by repetition)",10,limit,0,random,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",10,limit,0,random,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",10,limit,0,random,Neural Net (MLP),3.3847143122405965e-05,0,1
-"Run-away right (never halts, but not provable by repetition)",10,limit,0,hard,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",10,limit,0,hard,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",10,limit,0,hard,Neural Net (MLP),0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",25,limit,0,random,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",25,limit,0,random,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",25,limit,0,random,Neural Net (MLP),2.641421588046702e-06,0,1
-"Run-away right (never halts, but not provable by repetition)",25,limit,0,hard,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",25,limit,0,hard,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",25,limit,0,hard,Neural Net (MLP),1.2611571338707684e-41,0,1
-"Run-away right (never halts, but not provable by repetition)",50,limit,0,random,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",50,limit,0,random,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",50,limit,0,random,Neural Net (MLP),6.383514214415439e-06,0,1
-"Run-away right (never halts, but not provable by repetition)",50,limit,0,hard,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",50,limit,0,hard,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",50,limit,0,hard,Neural Net (MLP),3.1209470699891626e-47,0,1
-"Run-away right (never halts, but not provable by repetition)",100,limit,0,random,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",100,limit,0,random,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",100,limit,0,random,Neural Net (MLP),1.1971845621498955e-05,0,1
-"Run-away right (never halts, but not provable by repetition)",100,limit,0,hard,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",100,limit,0,hard,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",100,limit,0,hard,Neural Net (MLP),3.181426966013362e-66,0,1
-"Run-away right (never halts, but not provable by repetition)",250,limit,0,random,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",250,limit,0,random,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",250,limit,0,random,Neural Net (MLP),1.1971845621498955e-05,0,1
-"Run-away right (never halts, but not provable by repetition)",250,limit,0,hard,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",250,limit,0,hard,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",250,limit,0,hard,Neural Net (MLP),1.1876174443057884e-53,0,1
-"Run-away right (never halts, but not provable by repetition)",500,limit,0,random,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",500,limit,0,random,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",500,limit,0,random,Neural Net (MLP),1.1971845621498955e-05,0,1
-"Run-away right (never halts, but not provable by repetition)",500,limit,0,hard,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",500,limit,0,hard,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",500,limit,0,hard,Neural Net (MLP),1.1876174443057884e-53,0,1
-"Run-away right (never halts, but not provable by repetition)",1000,limit,0,random,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",1000,limit,0,random,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",1000,limit,0,random,Neural Net (MLP),1.1971845621498955e-05,0,1
-"Run-away right (never halts, but not provable by repetition)",1000,limit,0,hard,Decision Tree,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",1000,limit,0,hard,Random Forest,0.0,0,1
-"Run-away right (never halts, but not provable by repetition)",1000,limit,0,hard,Neural Net (MLP),1.1876174443057884e-53,0,1
+preset,limit,actual_status,actual_steps,actual_halts,train_pop,model,prob_halt,pred_halts,correct
+Binary incrementer (halts),10,halted,8,1,random,Decision Tree,1.0,1,1
+Binary incrementer (halts),10,halted,8,1,random,Random Forest,0.9916666666666667,1,1
+Binary incrementer (halts),10,halted,8,1,random,Neural Net (MLP),0.9997891954244025,1,1
+Binary incrementer (halts),10,halted,8,1,hard,Decision Tree,0.0,0,0
+Binary incrementer (halts),10,halted,8,1,hard,Random Forest,0.0,0,0
+Binary incrementer (halts),10,halted,8,1,hard,Neural Net (MLP),0.0,0,0
+Binary incrementer (halts),25,halted,8,1,random,Decision Tree,1.0,1,1
+Binary incrementer (halts),25,halted,8,1,random,Random Forest,0.9916666666666667,1,1
+Binary incrementer (halts),25,halted,8,1,random,Neural Net (MLP),0.9999886248393405,1,1
+Binary incrementer (halts),25,halted,8,1,hard,Decision Tree,0.0,0,0
+Binary incrementer (halts),25,halted,8,1,hard,Random Forest,0.49283326302183533,0,0
+Binary incrementer (halts),25,halted,8,1,hard,Neural Net (MLP),0.01156223158984134,0,0
+Binary incrementer (halts),50,halted,8,1,random,Decision Tree,1.0,1,1
+Binary incrementer (halts),50,halted,8,1,random,Random Forest,1.0,1,1
+Binary incrementer (halts),50,halted,8,1,random,Neural Net (MLP),0.9999491295466109,1,1
+Binary incrementer (halts),50,halted,8,1,hard,Decision Tree,0.8656088427260455,1,1
+Binary incrementer (halts),50,halted,8,1,hard,Random Forest,0.5103668147020933,1,1
+Binary incrementer (halts),50,halted,8,1,hard,Neural Net (MLP),0.2468887459560807,1,1
+Binary incrementer (halts),100,halted,8,1,random,Decision Tree,1.0,1,1
+Binary incrementer (halts),100,halted,8,1,random,Random Forest,0.9833333333333333,1,1
+Binary incrementer (halts),100,halted,8,1,random,Neural Net (MLP),0.9999827794465135,1,1
+Binary incrementer (halts),100,halted,8,1,hard,Decision Tree,0.8627450980392148,1,1
+Binary incrementer (halts),100,halted,8,1,hard,Random Forest,0.5100928077877233,1,1
+Binary incrementer (halts),100,halted,8,1,hard,Neural Net (MLP),0.007941958971341746,0,0
+Binary incrementer (halts),250,halted,8,1,random,Decision Tree,1.0,1,1
+Binary incrementer (halts),250,halted,8,1,random,Random Forest,0.9833333333333333,1,1
+Binary incrementer (halts),250,halted,8,1,random,Neural Net (MLP),0.9999827794465135,1,1
+Binary incrementer (halts),250,halted,8,1,hard,Decision Tree,0.862228495256017,1,1
+Binary incrementer (halts),250,halted,8,1,hard,Random Forest,0.4503693269326229,0,0
+Binary incrementer (halts),250,halted,8,1,hard,Neural Net (MLP),0.022458893156382134,0,0
+Binary incrementer (halts),500,halted,8,1,random,Decision Tree,1.0,1,1
+Binary incrementer (halts),500,halted,8,1,random,Random Forest,0.9833333333333333,1,1
+Binary incrementer (halts),500,halted,8,1,random,Neural Net (MLP),0.9999827794465135,1,1
+Binary incrementer (halts),500,halted,8,1,hard,Decision Tree,0.862228495256017,1,1
+Binary incrementer (halts),500,halted,8,1,hard,Random Forest,0.45036932693262294,0,0
+Binary incrementer (halts),500,halted,8,1,hard,Neural Net (MLP),0.022458893156382134,0,0
+Binary incrementer (halts),1000,halted,8,1,random,Decision Tree,1.0,1,1
+Binary incrementer (halts),1000,halted,8,1,random,Random Forest,0.9833333333333333,1,1
+Binary incrementer (halts),1000,halted,8,1,random,Neural Net (MLP),0.9999827794465135,1,1
+Binary incrementer (halts),1000,halted,8,1,hard,Decision Tree,0.862228495256017,1,1
+Binary incrementer (halts),1000,halted,8,1,hard,Random Forest,0.45036932693262294,0,0
+Binary incrementer (halts),1000,halted,8,1,hard,Neural Net (MLP),0.022458893156382134,0,0
+3-state busy beaver (halts),10,limit,10,0,random,Decision Tree,0.0,0,1
+3-state busy beaver (halts),10,limit,10,0,random,Random Forest,0.008333333333333333,0,1
+3-state busy beaver (halts),10,limit,10,0,random,Neural Net (MLP),0.0021078460452342985,0,1
+3-state busy beaver (halts),10,limit,10,0,hard,Decision Tree,0.0,0,1
+3-state busy beaver (halts),10,limit,10,0,hard,Random Forest,0.0,0,1
+3-state busy beaver (halts),10,limit,10,0,hard,Neural Net (MLP),0.0,0,1
+3-state busy beaver (halts),25,halted,14,1,random,Decision Tree,0.023199426111908228,0,0
+3-state busy beaver (halts),25,halted,14,1,random,Random Forest,0.02777777777777778,0,0
+3-state busy beaver (halts),25,halted,14,1,random,Neural Net (MLP),9.09307230943096e-05,0,0
+3-state busy beaver (halts),25,halted,14,1,hard,Decision Tree,0.0,0,0
+3-state busy beaver (halts),25,halted,14,1,hard,Random Forest,0.08309296464928563,0,0
+3-state busy beaver (halts),25,halted,14,1,hard,Neural Net (MLP),0.012580160421442542,0,0
+3-state busy beaver (halts),50,halted,14,1,random,Decision Tree,0.02307758373890643,0,0
+3-state busy beaver (halts),50,halted,14,1,random,Random Forest,0.025,0,0
+3-state busy beaver (halts),50,halted,14,1,random,Neural Net (MLP),0.0010778990703794163,0,0
+3-state busy beaver (halts),50,halted,14,1,hard,Decision Tree,0.0,0,0
+3-state busy beaver (halts),50,halted,14,1,hard,Random Forest,0.061468253968253964,0,0
+3-state busy beaver (halts),50,halted,14,1,hard,Neural Net (MLP),0.003819497909060423,0,0
+3-state busy beaver (halts),100,halted,14,1,random,Decision Tree,0.02304721030042921,0,0
+3-state busy beaver (halts),100,halted,14,1,random,Random Forest,0.010185185185185184,0,0
+3-state busy beaver (halts),100,halted,14,1,random,Neural Net (MLP),0.0006269409313274891,0,0
+3-state busy beaver (halts),100,halted,14,1,hard,Decision Tree,0.0,0,0
+3-state busy beaver (halts),100,halted,14,1,hard,Random Forest,0.07967832698428969,0,0
+3-state busy beaver (halts),100,halted,14,1,hard,Neural Net (MLP),0.010137677611841067,0,0
+3-state busy beaver (halts),250,halted,14,1,random,Decision Tree,0.02304721030042921,0,0
+3-state busy beaver (halts),250,halted,14,1,random,Random Forest,0.010185185185185184,0,0
+3-state busy beaver (halts),250,halted,14,1,random,Neural Net (MLP),0.0006269409313274891,0,0
+3-state busy beaver (halts),250,halted,14,1,hard,Decision Tree,0.322576859892044,0,0
+3-state busy beaver (halts),250,halted,14,1,hard,Random Forest,0.07177888909186864,0,0
+3-state busy beaver (halts),250,halted,14,1,hard,Neural Net (MLP),0.0011616497466377697,0,0
+3-state busy beaver (halts),500,halted,14,1,random,Decision Tree,0.02304721030042921,0,0
+3-state busy beaver (halts),500,halted,14,1,random,Random Forest,0.010185185185185184,0,0
+3-state busy beaver (halts),500,halted,14,1,random,Neural Net (MLP),0.0006269409313274891,0,0
+3-state busy beaver (halts),500,halted,14,1,hard,Decision Tree,0.322576859892044,0,0
+3-state busy beaver (halts),500,halted,14,1,hard,Random Forest,0.07177888909186864,0,0
+3-state busy beaver (halts),500,halted,14,1,hard,Neural Net (MLP),0.0011616497466377697,0,0
+3-state busy beaver (halts),1000,halted,14,1,random,Decision Tree,0.02304721030042921,0,0
+3-state busy beaver (halts),1000,halted,14,1,random,Random Forest,0.010185185185185184,0,0
+3-state busy beaver (halts),1000,halted,14,1,random,Neural Net (MLP),0.0006269409313274891,0,0
+3-state busy beaver (halts),1000,halted,14,1,hard,Decision Tree,0.322576859892044,0,0
+3-state busy beaver (halts),1000,halted,14,1,hard,Random Forest,0.07177888909186864,0,0
+3-state busy beaver (halts),1000,halted,14,1,hard,Neural Net (MLP),0.0011616497466377697,0,0
+4-state busy beaver (halts in 107 steps),10,limit,10,0,random,Decision Tree,0.0,0,1
+4-state busy beaver (halts in 107 steps),10,limit,10,0,random,Random Forest,0.0,0,1
+4-state busy beaver (halts in 107 steps),10,limit,10,0,random,Neural Net (MLP),0.002139123349110033,0,1
+4-state busy beaver (halts in 107 steps),10,limit,10,0,hard,Decision Tree,0.0,0,1
+4-state busy beaver (halts in 107 steps),10,limit,10,0,hard,Random Forest,0.0,0,1
+4-state busy beaver (halts in 107 steps),10,limit,10,0,hard,Neural Net (MLP),0.0,0,1
+4-state busy beaver (halts in 107 steps),25,limit,25,0,random,Decision Tree,0.2610947572381412,0,1
+4-state busy beaver (halts in 107 steps),25,limit,25,0,random,Random Forest,0.04325520833333333,0,1
+4-state busy beaver (halts in 107 steps),25,limit,25,0,random,Neural Net (MLP),0.055139541390937366,0,1
+4-state busy beaver (halts in 107 steps),25,limit,25,0,hard,Decision Tree,0.7471790768891249,1,0
+4-state busy beaver (halts in 107 steps),25,limit,25,0,hard,Random Forest,0.4506467353725899,0,1
+4-state busy beaver (halts in 107 steps),25,limit,25,0,hard,Neural Net (MLP),0.07037620950957198,0,1
+4-state busy beaver (halts in 107 steps),50,limit,50,0,random,Decision Tree,0.19458022334983396,0,1
+4-state busy beaver (halts in 107 steps),50,limit,50,0,random,Random Forest,0.09246031746031745,0,1
+4-state busy beaver (halts in 107 steps),50,limit,50,0,random,Neural Net (MLP),0.15860575073078104,0,1
+4-state busy beaver (halts in 107 steps),50,limit,50,0,hard,Decision Tree,0.71530363259368,1,0
+4-state busy beaver (halts in 107 steps),50,limit,50,0,hard,Random Forest,0.6116514732539716,1,0
+4-state busy beaver (halts in 107 steps),50,limit,50,0,hard,Neural Net (MLP),0.02293437479395023,0,1
+4-state busy beaver (halts in 107 steps),100,limit,100,0,random,Decision Tree,0.2125890736342044,0,1
+4-state busy beaver (halts in 107 steps),100,limit,100,0,random,Random Forest,0.065625,0,1
+4-state busy beaver (halts in 107 steps),100,limit,100,0,random,Neural Net (MLP),0.09176891876334596,0,1
+4-state busy beaver (halts in 107 steps),100,limit,100,0,hard,Decision Tree,0.7110266159695818,1,0
+4-state busy beaver (halts in 107 steps),100,limit,100,0,hard,Random Forest,0.611360042663705,1,0
+4-state busy beaver (halts in 107 steps),100,limit,100,0,hard,Neural Net (MLP),0.04536733498680015,0,1
+4-state busy beaver (halts in 107 steps),250,halted,107,1,random,Decision Tree,0.2125890736342044,0,0
+4-state busy beaver (halts in 107 steps),250,halted,107,1,random,Random Forest,0.065625,0,0
+4-state busy beaver (halts in 107 steps),250,halted,107,1,random,Neural Net (MLP),0.09176891876334596,0,0
+4-state busy beaver (halts in 107 steps),250,halted,107,1,hard,Decision Tree,0.6954606941131504,1,1
+4-state busy beaver (halts in 107 steps),250,halted,107,1,hard,Random Forest,0.6274098917722086,1,1
+4-state busy beaver (halts in 107 steps),250,halted,107,1,hard,Neural Net (MLP),0.014069841053039257,0,0
+4-state busy beaver (halts in 107 steps),500,halted,107,1,random,Decision Tree,0.2125890736342044,0,0
+4-state busy beaver (halts in 107 steps),500,halted,107,1,random,Random Forest,0.065625,0,0
+4-state busy beaver (halts in 107 steps),500,halted,107,1,random,Neural Net (MLP),0.09176891876334596,0,0
+4-state busy beaver (halts in 107 steps),500,halted,107,1,hard,Decision Tree,0.6954606941131504,1,1
+4-state busy beaver (halts in 107 steps),500,halted,107,1,hard,Random Forest,0.6274098917722086,1,1
+4-state busy beaver (halts in 107 steps),500,halted,107,1,hard,Neural Net (MLP),0.014069841053039257,0,0
+4-state busy beaver (halts in 107 steps),1000,halted,107,1,random,Decision Tree,0.2125890736342044,0,0
+4-state busy beaver (halts in 107 steps),1000,halted,107,1,random,Random Forest,0.065625,0,0
+4-state busy beaver (halts in 107 steps),1000,halted,107,1,random,Neural Net (MLP),0.09176891876334596,0,0
+4-state busy beaver (halts in 107 steps),1000,halted,107,1,hard,Decision Tree,0.6954606941131504,1,1
+4-state busy beaver (halts in 107 steps),1000,halted,107,1,hard,Random Forest,0.6274098917722086,1,1
+4-state busy beaver (halts in 107 steps),1000,halted,107,1,hard,Neural Net (MLP),0.014069841053039257,0,0
+2-state busy beaver (halts),10,halted,6,1,random,Decision Tree,1.0,1,1
+2-state busy beaver (halts),10,halted,6,1,random,Random Forest,0.9833333333333333,1,1
+2-state busy beaver (halts),10,halted,6,1,random,Neural Net (MLP),0.9958151476394005,1,1
+2-state busy beaver (halts),10,halted,6,1,hard,Decision Tree,0.0,0,0
+2-state busy beaver (halts),10,halted,6,1,hard,Random Forest,0.0,0,0
+2-state busy beaver (halts),10,halted,6,1,hard,Neural Net (MLP),0.0,0,0
+2-state busy beaver (halts),25,halted,6,1,random,Decision Tree,1.0,1,1
+2-state busy beaver (halts),25,halted,6,1,random,Random Forest,0.9666666666666667,1,1
+2-state busy beaver (halts),25,halted,6,1,random,Neural Net (MLP),0.999693690879033,1,1
+2-state busy beaver (halts),25,halted,6,1,hard,Decision Tree,0.0,0,0
+2-state busy beaver (halts),25,halted,6,1,hard,Random Forest,0.1696564012127222,0,0
+2-state busy beaver (halts),25,halted,6,1,hard,Neural Net (MLP),0.0011453630887231394,0,0
+2-state busy beaver (halts),50,halted,6,1,random,Decision Tree,1.0,1,1
+2-state busy beaver (halts),50,halted,6,1,random,Random Forest,0.975,1,1
+2-state busy beaver (halts),50,halted,6,1,random,Neural Net (MLP),0.9999131653186847,1,1
+2-state busy beaver (halts),50,halted,6,1,hard,Decision Tree,0.71530363259368,1,1
+2-state busy beaver (halts),50,halted,6,1,hard,Random Forest,0.21505380656648773,0,0
+2-state busy beaver (halts),50,halted,6,1,hard,Neural Net (MLP),0.0002532599812549818,0,0
+2-state busy beaver (halts),100,halted,6,1,random,Decision Tree,1.0,1,1
+2-state busy beaver (halts),100,halted,6,1,random,Random Forest,0.965,1,1
+2-state busy beaver (halts),100,halted,6,1,random,Neural Net (MLP),0.9996451149069627,1,1
+2-state busy beaver (halts),100,halted,6,1,hard,Decision Tree,0.7110266159695818,1,1
+2-state busy beaver (halts),100,halted,6,1,hard,Random Forest,0.20796793474302275,0,0
+2-state busy beaver (halts),100,halted,6,1,hard,Neural Net (MLP),0.0036872246659484277,0,0
+2-state busy beaver (halts),250,halted,6,1,random,Decision Tree,1.0,1,1
+2-state busy beaver (halts),250,halted,6,1,random,Random Forest,0.965,1,1
+2-state busy beaver (halts),250,halted,6,1,random,Neural Net (MLP),0.9996451149069627,1,1
+2-state busy beaver (halts),250,halted,6,1,hard,Decision Tree,0.0,0,0
+2-state busy beaver (halts),250,halted,6,1,hard,Random Forest,0.18841226109291262,0,0
+2-state busy beaver (halts),250,halted,6,1,hard,Neural Net (MLP),6.900565162365078e-05,0,0
+2-state busy beaver (halts),500,halted,6,1,random,Decision Tree,1.0,1,1
+2-state busy beaver (halts),500,halted,6,1,random,Random Forest,0.965,1,1
+2-state busy beaver (halts),500,halted,6,1,random,Neural Net (MLP),0.9996451149069627,1,1
+2-state busy beaver (halts),500,halted,6,1,hard,Decision Tree,0.0,0,0
+2-state busy beaver (halts),500,halted,6,1,hard,Random Forest,0.18841226109291262,0,0
+2-state busy beaver (halts),500,halted,6,1,hard,Neural Net (MLP),6.900565162365078e-05,0,0
+2-state busy beaver (halts),1000,halted,6,1,random,Decision Tree,1.0,1,1
+2-state busy beaver (halts),1000,halted,6,1,random,Random Forest,0.965,1,1
+2-state busy beaver (halts),1000,halted,6,1,random,Neural Net (MLP),0.9996451149069627,1,1
+2-state busy beaver (halts),1000,halted,6,1,hard,Decision Tree,0.0,0,0
+2-state busy beaver (halts),1000,halted,6,1,hard,Random Forest,0.18841226109291262,0,0
+2-state busy beaver (halts),1000,halted,6,1,hard,Neural Net (MLP),6.900565162365078e-05,0,0
+Unary addition 111+11 (halts),10,halted,8,1,random,Decision Tree,1.0,1,1
+Unary addition 111+11 (halts),10,halted,8,1,random,Random Forest,0.9916666666666667,1,1
+Unary addition 111+11 (halts),10,halted,8,1,random,Neural Net (MLP),0.9999244518470228,1,1
+Unary addition 111+11 (halts),10,halted,8,1,hard,Decision Tree,0.0,0,0
+Unary addition 111+11 (halts),10,halted,8,1,hard,Random Forest,0.0,0,0
+Unary addition 111+11 (halts),10,halted,8,1,hard,Neural Net (MLP),0.0,0,0
+Unary addition 111+11 (halts),25,halted,8,1,random,Decision Tree,1.0,1,1
+Unary addition 111+11 (halts),25,halted,8,1,random,Random Forest,1.0,1,1
+Unary addition 111+11 (halts),25,halted,8,1,random,Neural Net (MLP),0.9999879599028626,1,1
+Unary addition 111+11 (halts),25,halted,8,1,hard,Decision Tree,0.8515898400752608,1,1
+Unary addition 111+11 (halts),25,halted,8,1,hard,Random Forest,0.5755241436791775,1,1
+Unary addition 111+11 (halts),25,halted,8,1,hard,Neural Net (MLP),0.24903195366102707,0,0
+Unary addition 111+11 (halts),50,halted,8,1,random,Decision Tree,1.0,1,1
+Unary addition 111+11 (halts),50,halted,8,1,random,Random Forest,0.9995614035087719,1,1
+Unary addition 111+11 (halts),50,halted,8,1,random,Neural Net (MLP),0.9999733298934624,1,1
+Unary addition 111+11 (halts),50,halted,8,1,hard,Decision Tree,0.8030428715653648,1,1
+Unary addition 111+11 (halts),50,halted,8,1,hard,Random Forest,0.5667602327124738,1,1
+Unary addition 111+11 (halts),50,halted,8,1,hard,Neural Net (MLP),0.3546772129725139,1,1
+Unary addition 111+11 (halts),100,halted,8,1,random,Decision Tree,1.0,1,1
+Unary addition 111+11 (halts),100,halted,8,1,random,Random Forest,0.975,1,1
+Unary addition 111+11 (halts),100,halted,8,1,random,Neural Net (MLP),0.999998485367694,1,1
+Unary addition 111+11 (halts),100,halted,8,1,hard,Decision Tree,0.8575418994413472,1,1
+Unary addition 111+11 (halts),100,halted,8,1,hard,Random Forest,0.5986907129699617,1,1
+Unary addition 111+11 (halts),100,halted,8,1,hard,Neural Net (MLP),0.0747197697775299,0,0
+Unary addition 111+11 (halts),250,halted,8,1,random,Decision Tree,1.0,1,1
+Unary addition 111+11 (halts),250,halted,8,1,random,Random Forest,0.975,1,1
+Unary addition 111+11 (halts),250,halted,8,1,random,Neural Net (MLP),0.999998485367694,1,1
+Unary addition 111+11 (halts),250,halted,8,1,hard,Decision Tree,0.8576250035451882,1,1
+Unary addition 111+11 (halts),250,halted,8,1,hard,Random Forest,0.5425328783293533,1,1
+Unary addition 111+11 (halts),250,halted,8,1,hard,Neural Net (MLP),0.1846804944127861,1,1
+Unary addition 111+11 (halts),500,halted,8,1,random,Decision Tree,1.0,1,1
+Unary addition 111+11 (halts),500,halted,8,1,random,Random Forest,0.975,1,1
+Unary addition 111+11 (halts),500,halted,8,1,random,Neural Net (MLP),0.999998485367694,1,1
+Unary addition 111+11 (halts),500,halted,8,1,hard,Decision Tree,0.8576250035451882,1,1
+Unary addition 111+11 (halts),500,halted,8,1,hard,Random Forest,0.5425328783293532,1,1
+Unary addition 111+11 (halts),500,halted,8,1,hard,Neural Net (MLP),0.1846804944127861,1,1
+Unary addition 111+11 (halts),1000,halted,8,1,random,Decision Tree,1.0,1,1
+Unary addition 111+11 (halts),1000,halted,8,1,random,Random Forest,0.975,1,1
+Unary addition 111+11 (halts),1000,halted,8,1,random,Neural Net (MLP),0.999998485367694,1,1
+Unary addition 111+11 (halts),1000,halted,8,1,hard,Decision Tree,0.8576250035451882,1,1
+Unary addition 111+11 (halts),1000,halted,8,1,hard,Random Forest,0.5425328783293532,1,1
+Unary addition 111+11 (halts),1000,halted,8,1,hard,Neural Net (MLP),0.1846804944127861,1,1
+"Binary palindrome checker (halts, writes Y/N)",10,limit,10,0,random,Decision Tree,0.0,0,1
+"Binary palindrome checker (halts, writes Y/N)",10,limit,10,0,random,Random Forest,0.008333333333333333,0,1
+"Binary palindrome checker (halts, writes Y/N)",10,limit,10,0,random,Neural Net (MLP),0.0003624107805895031,0,1
+"Binary palindrome checker (halts, writes Y/N)",10,limit,10,0,hard,Decision Tree,0.0,0,1
+"Binary palindrome checker (halts, writes Y/N)",10,limit,10,0,hard,Random Forest,0.0,0,1
+"Binary palindrome checker (halts, writes Y/N)",10,limit,10,0,hard,Neural Net (MLP),0.0,0,1
+"Binary palindrome checker (halts, writes Y/N)",25,limit,25,0,random,Decision Tree,0.2407631931593388,0,1
+"Binary palindrome checker (halts, writes Y/N)",25,limit,25,0,random,Random Forest,0.43973949238734183,0,1
+"Binary palindrome checker (halts, writes Y/N)",25,limit,25,0,random,Neural Net (MLP),0.9464390496006713,1,0
+"Binary palindrome checker (halts, writes Y/N)",25,limit,25,0,hard,Decision Tree,0.9228264944993656,1,0
+"Binary palindrome checker (halts, writes Y/N)",25,limit,25,0,hard,Random Forest,0.6193080546735136,1,0
+"Binary palindrome checker (halts, writes Y/N)",25,limit,25,0,hard,Neural Net (MLP),0.9534702255136565,1,0
+"Binary palindrome checker (halts, writes Y/N)",50,halted,36,1,random,Decision Tree,0.7299845146567415,1,1
+"Binary palindrome checker (halts, writes Y/N)",50,halted,36,1,random,Random Forest,0.4635149572649573,0,0
+"Binary palindrome checker (halts, writes Y/N)",50,halted,36,1,random,Neural Net (MLP),0.9088553268662756,1,1
+"Binary palindrome checker (halts, writes Y/N)",50,halted,36,1,hard,Decision Tree,0.5840356177452694,1,1
+"Binary palindrome checker (halts, writes Y/N)",50,halted,36,1,hard,Random Forest,0.6086534908555528,1,1
+"Binary palindrome checker (halts, writes Y/N)",50,halted,36,1,hard,Neural Net (MLP),0.9462310301587985,1,1
+"Binary palindrome checker (halts, writes Y/N)",100,halted,36,1,random,Decision Tree,0.7297187117814921,1,1
+"Binary palindrome checker (halts, writes Y/N)",100,halted,36,1,random,Random Forest,0.45960386674049464,0,0
+"Binary palindrome checker (halts, writes Y/N)",100,halted,36,1,random,Neural Net (MLP),0.9937657594605506,1,1
+"Binary palindrome checker (halts, writes Y/N)",100,halted,36,1,hard,Decision Tree,0.9468045807166627,1,1
+"Binary palindrome checker (halts, writes Y/N)",100,halted,36,1,hard,Random Forest,0.4958635784611691,0,0
+"Binary palindrome checker (halts, writes Y/N)",100,halted,36,1,hard,Neural Net (MLP),0.722821405174269,1,1
+"Binary palindrome checker (halts, writes Y/N)",250,halted,36,1,random,Decision Tree,0.7297187117814921,1,1
+"Binary palindrome checker (halts, writes Y/N)",250,halted,36,1,random,Random Forest,0.45960386674049464,0,0
+"Binary palindrome checker (halts, writes Y/N)",250,halted,36,1,random,Neural Net (MLP),0.9937657594605506,1,1
+"Binary palindrome checker (halts, writes Y/N)",250,halted,36,1,hard,Decision Tree,0.9471508144631801,1,1
+"Binary palindrome checker (halts, writes Y/N)",250,halted,36,1,hard,Random Forest,0.47111781568596206,0,0
+"Binary palindrome checker (halts, writes Y/N)",250,halted,36,1,hard,Neural Net (MLP),0.9411793661192183,1,1
+"Binary palindrome checker (halts, writes Y/N)",500,halted,36,1,random,Decision Tree,0.7297187117814921,1,1
+"Binary palindrome checker (halts, writes Y/N)",500,halted,36,1,random,Random Forest,0.4596038667404946,0,0
+"Binary palindrome checker (halts, writes Y/N)",500,halted,36,1,random,Neural Net (MLP),0.9937657594605506,1,1
+"Binary palindrome checker (halts, writes Y/N)",500,halted,36,1,hard,Decision Tree,0.9471508144631801,1,1
+"Binary palindrome checker (halts, writes Y/N)",500,halted,36,1,hard,Random Forest,0.47111781568596206,0,0
+"Binary palindrome checker (halts, writes Y/N)",500,halted,36,1,hard,Neural Net (MLP),0.9411793661192183,1,1
+"Binary palindrome checker (halts, writes Y/N)",1000,halted,36,1,random,Decision Tree,0.7297187117814921,1,1
+"Binary palindrome checker (halts, writes Y/N)",1000,halted,36,1,random,Random Forest,0.45960386674049464,0,0
+"Binary palindrome checker (halts, writes Y/N)",1000,halted,36,1,random,Neural Net (MLP),0.9937657594605506,1,1
+"Binary palindrome checker (halts, writes Y/N)",1000,halted,36,1,hard,Decision Tree,0.9471508144631801,1,1
+"Binary palindrome checker (halts, writes Y/N)",1000,halted,36,1,hard,Random Forest,0.47111781568596206,0,0
+"Binary palindrome checker (halts, writes Y/N)",1000,halted,36,1,hard,Neural Net (MLP),0.9411793661192183,1,1
+Binary countdown to zero (slow halter),10,limit,10,0,random,Decision Tree,0.0,0,1
+Binary countdown to zero (slow halter),10,limit,10,0,random,Random Forest,0.008333333333333333,0,1
+Binary countdown to zero (slow halter),10,limit,10,0,random,Neural Net (MLP),0.02930987275692003,0,1
+Binary countdown to zero (slow halter),10,limit,10,0,hard,Decision Tree,0.0,0,1
+Binary countdown to zero (slow halter),10,limit,10,0,hard,Random Forest,0.0,0,1
+Binary countdown to zero (slow halter),10,limit,10,0,hard,Neural Net (MLP),0.0,0,1
+Binary countdown to zero (slow halter),25,limit,25,0,random,Decision Tree,1.0,1,0
+Binary countdown to zero (slow halter),25,limit,25,0,random,Random Forest,0.2177349171992029,0,1
+Binary countdown to zero (slow halter),25,limit,25,0,random,Neural Net (MLP),0.6181455748316778,0,1
+Binary countdown to zero (slow halter),25,limit,25,0,hard,Decision Tree,0.8515898400752608,1,0
+Binary countdown to zero (slow halter),25,limit,25,0,hard,Random Forest,0.4270552284226612,0,1
+Binary countdown to zero (slow halter),25,limit,25,0,hard,Neural Net (MLP),0.0029865684991854514,0,1
+Binary countdown to zero (slow halter),50,limit,50,0,random,Decision Tree,0.08915781440347373,0,1
+Binary countdown to zero (slow halter),50,limit,50,0,random,Random Forest,0.2946783671287637,0,1
+Binary countdown to zero (slow halter),50,limit,50,0,random,Neural Net (MLP),0.5708265911104563,0,1
+Binary countdown to zero (slow halter),50,limit,50,0,hard,Decision Tree,0.8030428715653648,1,0
+Binary countdown to zero (slow halter),50,limit,50,0,hard,Random Forest,0.4630763762901954,0,1
+Binary countdown to zero (slow halter),50,limit,50,0,hard,Neural Net (MLP),0.018367194601076577,0,1
+Binary countdown to zero (slow halter),100,limit,100,0,random,Decision Tree,0.07731068240714077,0,1
+Binary countdown to zero (slow halter),100,limit,100,0,random,Random Forest,0.286621617965368,0,1
+Binary countdown to zero (slow halter),100,limit,100,0,random,Neural Net (MLP),0.9653550367504102,0,1
+Binary countdown to zero (slow halter),100,limit,100,0,hard,Decision Tree,0.8575418994413472,1,0
+Binary countdown to zero (slow halter),100,limit,100,0,hard,Random Forest,0.4948535526778065,0,1
+Binary countdown to zero (slow halter),100,limit,100,0,hard,Neural Net (MLP),0.013147825304835197,0,1
+Binary countdown to zero (slow halter),250,halted,125,1,random,Decision Tree,0.07731068240714077,0,0
+Binary countdown to zero (slow halter),250,halted,125,1,random,Random Forest,0.286621617965368,0,0
+Binary countdown to zero (slow halter),250,halted,125,1,random,Neural Net (MLP),0.9653550367504102,0,0
+Binary countdown to zero (slow halter),250,halted,125,1,hard,Decision Tree,0.8576250035451882,1,1
+Binary countdown to zero (slow halter),250,halted,125,1,hard,Random Forest,0.5113921865297494,1,1
+Binary countdown to zero (slow halter),250,halted,125,1,hard,Neural Net (MLP),0.0028337746308424562,0,0
+Binary countdown to zero (slow halter),500,halted,125,1,random,Decision Tree,0.07731068240714077,0,0
+Binary countdown to zero (slow halter),500,halted,125,1,random,Random Forest,0.286621617965368,0,0
+Binary countdown to zero (slow halter),500,halted,125,1,random,Neural Net (MLP),0.9653550367504102,0,0
+Binary countdown to zero (slow halter),500,halted,125,1,hard,Decision Tree,0.8576250035451882,1,1
+Binary countdown to zero (slow halter),500,halted,125,1,hard,Random Forest,0.5113921865297495,1,1
+Binary countdown to zero (slow halter),500,halted,125,1,hard,Neural Net (MLP),0.0028337746308424562,0,0
+Binary countdown to zero (slow halter),1000,halted,125,1,random,Decision Tree,0.07731068240714077,0,0
+Binary countdown to zero (slow halter),1000,halted,125,1,random,Random Forest,0.286621617965368,0,0
+Binary countdown to zero (slow halter),1000,halted,125,1,random,Neural Net (MLP),0.9653550367504102,0,0
+Binary countdown to zero (slow halter),1000,halted,125,1,hard,Decision Tree,0.8576250035451882,1,1
+Binary countdown to zero (slow halter),1000,halted,125,1,hard,Random Forest,0.5113921865297495,1,1
+Binary countdown to zero (slow halter),1000,halted,125,1,hard,Neural Net (MLP),0.0028337746308424562,0,0
+Custom symbols a/b: flip & halt,10,halted,6,1,random,Decision Tree,1.0,1,1
+Custom symbols a/b: flip & halt,10,halted,6,1,random,Random Forest,1.0,1,1
+Custom symbols a/b: flip & halt,10,halted,6,1,random,Neural Net (MLP),0.9995809900107351,1,1
+Custom symbols a/b: flip & halt,10,halted,6,1,hard,Decision Tree,0.0,0,0
+Custom symbols a/b: flip & halt,10,halted,6,1,hard,Random Forest,0.0,0,0
+Custom symbols a/b: flip & halt,10,halted,6,1,hard,Neural Net (MLP),0.0,0,0
+Custom symbols a/b: flip & halt,25,halted,6,1,random,Decision Tree,1.0,1,1
+Custom symbols a/b: flip & halt,25,halted,6,1,random,Random Forest,1.0,1,1
+Custom symbols a/b: flip & halt,25,halted,6,1,random,Neural Net (MLP),0.9999572041814919,1,1
+Custom symbols a/b: flip & halt,25,halted,6,1,hard,Decision Tree,0.8515898400752608,1,1
+Custom symbols a/b: flip & halt,25,halted,6,1,hard,Random Forest,0.46028461579388835,0,0
+Custom symbols a/b: flip & halt,25,halted,6,1,hard,Neural Net (MLP),0.0005532653419678363,0,0
+Custom symbols a/b: flip & halt,50,halted,6,1,random,Decision Tree,1.0,1,1
+Custom symbols a/b: flip & halt,50,halted,6,1,random,Random Forest,0.9916666666666667,1,1
+Custom symbols a/b: flip & halt,50,halted,6,1,random,Neural Net (MLP),0.9999873379680069,1,1
+Custom symbols a/b: flip & halt,50,halted,6,1,hard,Decision Tree,0.8030428715653648,1,1
+Custom symbols a/b: flip & halt,50,halted,6,1,hard,Random Forest,0.4561711866711146,0,0
+Custom symbols a/b: flip & halt,50,halted,6,1,hard,Neural Net (MLP),0.0073364597492420695,0,0
+Custom symbols a/b: flip & halt,100,halted,6,1,random,Decision Tree,1.0,1,1
+Custom symbols a/b: flip & halt,100,halted,6,1,random,Random Forest,1.0,1,1
+Custom symbols a/b: flip & halt,100,halted,6,1,random,Neural Net (MLP),0.9999564613110975,1,1
+Custom symbols a/b: flip & halt,100,halted,6,1,hard,Decision Tree,0.8575418994413472,1,1
+Custom symbols a/b: flip & halt,100,halted,6,1,hard,Random Forest,0.5181560407107975,1,1
+Custom symbols a/b: flip & halt,100,halted,6,1,hard,Neural Net (MLP),7.440080095016019e-05,0,0
+Custom symbols a/b: flip & halt,250,halted,6,1,random,Decision Tree,1.0,1,1
+Custom symbols a/b: flip & halt,250,halted,6,1,random,Random Forest,1.0,1,1
+Custom symbols a/b: flip & halt,250,halted,6,1,random,Neural Net (MLP),0.9999564613110975,1,1
+Custom symbols a/b: flip & halt,250,halted,6,1,hard,Decision Tree,0.8576250035451882,1,1
+Custom symbols a/b: flip & halt,250,halted,6,1,hard,Random Forest,0.4276371756900818,0,0
+Custom symbols a/b: flip & halt,250,halted,6,1,hard,Neural Net (MLP),4.81287762817045e-05,0,0
+Custom symbols a/b: flip & halt,500,halted,6,1,random,Decision Tree,1.0,1,1
+Custom symbols a/b: flip & halt,500,halted,6,1,random,Random Forest,1.0,1,1
+Custom symbols a/b: flip & halt,500,halted,6,1,random,Neural Net (MLP),0.9999564613110975,1,1
+Custom symbols a/b: flip & halt,500,halted,6,1,hard,Decision Tree,0.8576250035451882,1,1
+Custom symbols a/b: flip & halt,500,halted,6,1,hard,Random Forest,0.42763717569008175,0,0
+Custom symbols a/b: flip & halt,500,halted,6,1,hard,Neural Net (MLP),4.81287762817045e-05,0,0
+Custom symbols a/b: flip & halt,1000,halted,6,1,random,Decision Tree,1.0,1,1
+Custom symbols a/b: flip & halt,1000,halted,6,1,random,Random Forest,1.0,1,1
+Custom symbols a/b: flip & halt,1000,halted,6,1,random,Neural Net (MLP),0.9999564613110975,1,1
+Custom symbols a/b: flip & halt,1000,halted,6,1,hard,Decision Tree,0.8576250035451882,1,1
+Custom symbols a/b: flip & halt,1000,halted,6,1,hard,Random Forest,0.4276371756900818,0,0
+Custom symbols a/b: flip & halt,1000,halted,6,1,hard,Neural Net (MLP),4.81287762817045e-05,0,0
+Ping-pong (provably loops),10,looping,2,0,random,Decision Tree,0.0,0,1
+Ping-pong (provably loops),10,looping,2,0,random,Random Forest,0.0,0,1
+Ping-pong (provably loops),10,looping,2,0,random,Neural Net (MLP),1.269621646532275e-05,0,1
+Ping-pong (provably loops),10,looping,2,0,hard,Decision Tree,0.0,0,1
+Ping-pong (provably loops),10,looping,2,0,hard,Random Forest,0.0,0,1
+Ping-pong (provably loops),10,looping,2,0,hard,Neural Net (MLP),0.0,0,1
+Ping-pong (provably loops),25,looping,2,0,random,Decision Tree,0.0,0,1
+Ping-pong (provably loops),25,looping,2,0,random,Random Forest,0.0,0,1
+Ping-pong (provably loops),25,looping,2,0,random,Neural Net (MLP),1.4657715110458088e-12,0,1
+Ping-pong (provably loops),25,looping,2,0,hard,Decision Tree,0.0,0,1
+Ping-pong (provably loops),25,looping,2,0,hard,Random Forest,0.0,0,1
+Ping-pong (provably loops),25,looping,2,0,hard,Neural Net (MLP),8.099520251712218e-12,0,1
+Ping-pong (provably loops),50,looping,2,0,random,Decision Tree,0.0,0,1
+Ping-pong (provably loops),50,looping,2,0,random,Random Forest,0.0,0,1
+Ping-pong (provably loops),50,looping,2,0,random,Neural Net (MLP),8.016942576951457e-13,0,1
+Ping-pong (provably loops),50,looping,2,0,hard,Decision Tree,0.0,0,1
+Ping-pong (provably loops),50,looping,2,0,hard,Random Forest,0.0,0,1
+Ping-pong (provably loops),50,looping,2,0,hard,Neural Net (MLP),2.2908114645045366e-12,0,1
+Ping-pong (provably loops),100,looping,2,0,random,Decision Tree,0.0,0,1
+Ping-pong (provably loops),100,looping,2,0,random,Random Forest,0.0,0,1
+Ping-pong (provably loops),100,looping,2,0,random,Neural Net (MLP),3.035166962154532e-13,0,1
+Ping-pong (provably loops),100,looping,2,0,hard,Decision Tree,0.0,0,1
+Ping-pong (provably loops),100,looping,2,0,hard,Random Forest,0.0,0,1
+Ping-pong (provably loops),100,looping,2,0,hard,Neural Net (MLP),7.039119882086816e-14,0,1
+Ping-pong (provably loops),250,looping,2,0,random,Decision Tree,0.0,0,1
+Ping-pong (provably loops),250,looping,2,0,random,Random Forest,0.0,0,1
+Ping-pong (provably loops),250,looping,2,0,random,Neural Net (MLP),3.035166962154532e-13,0,1
+Ping-pong (provably loops),250,looping,2,0,hard,Decision Tree,0.0,0,1
+Ping-pong (provably loops),250,looping,2,0,hard,Random Forest,0.0,0,1
+Ping-pong (provably loops),250,looping,2,0,hard,Neural Net (MLP),2.187253348497774e-11,0,1
+Ping-pong (provably loops),500,looping,2,0,random,Decision Tree,0.0,0,1
+Ping-pong (provably loops),500,looping,2,0,random,Random Forest,0.0,0,1
+Ping-pong (provably loops),500,looping,2,0,random,Neural Net (MLP),3.035166962154532e-13,0,1
+Ping-pong (provably loops),500,looping,2,0,hard,Decision Tree,0.0,0,1
+Ping-pong (provably loops),500,looping,2,0,hard,Random Forest,0.0,0,1
+Ping-pong (provably loops),500,looping,2,0,hard,Neural Net (MLP),2.187253348497774e-11,0,1
+Ping-pong (provably loops),1000,looping,2,0,random,Decision Tree,0.0,0,1
+Ping-pong (provably loops),1000,looping,2,0,random,Random Forest,0.0,0,1
+Ping-pong (provably loops),1000,looping,2,0,random,Neural Net (MLP),3.035166962154532e-13,0,1
+Ping-pong (provably loops),1000,looping,2,0,hard,Decision Tree,0.0,0,1
+Ping-pong (provably loops),1000,looping,2,0,hard,Random Forest,0.0,0,1
+Ping-pong (provably loops),1000,looping,2,0,hard,Neural Net (MLP),2.187253348497774e-11,0,1
+"Run-away right (never halts, but not provable by repetition)",10,limit,10,0,random,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",10,limit,10,0,random,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",10,limit,10,0,random,Neural Net (MLP),5.4993235741737686e-08,0,1
+"Run-away right (never halts, but not provable by repetition)",10,limit,10,0,hard,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",10,limit,10,0,hard,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",10,limit,10,0,hard,Neural Net (MLP),0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",25,limit,25,0,random,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",25,limit,25,0,random,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",25,limit,25,0,random,Neural Net (MLP),8.404111668629626e-12,0,1
+"Run-away right (never halts, but not provable by repetition)",25,limit,25,0,hard,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",25,limit,25,0,hard,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",25,limit,25,0,hard,Neural Net (MLP),1.3312790375369719e-18,0,1
+"Run-away right (never halts, but not provable by repetition)",50,limit,50,0,random,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",50,limit,50,0,random,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",50,limit,50,0,random,Neural Net (MLP),9.667380907934996e-11,0,1
+"Run-away right (never halts, but not provable by repetition)",50,limit,50,0,hard,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",50,limit,50,0,hard,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",50,limit,50,0,hard,Neural Net (MLP),1.9472278324992088e-20,0,1
+"Run-away right (never halts, but not provable by repetition)",100,limit,100,0,random,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",100,limit,100,0,random,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",100,limit,100,0,random,Neural Net (MLP),6.913309526137653e-11,0,1
+"Run-away right (never halts, but not provable by repetition)",100,limit,100,0,hard,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",100,limit,100,0,hard,Random Forest,0.008333333333333333,0,1
+"Run-away right (never halts, but not provable by repetition)",100,limit,100,0,hard,Neural Net (MLP),6.603894026113003e-22,0,1
+"Run-away right (never halts, but not provable by repetition)",250,limit,250,0,random,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",250,limit,250,0,random,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",250,limit,250,0,random,Neural Net (MLP),6.913309526137653e-11,0,1
+"Run-away right (never halts, but not provable by repetition)",250,limit,250,0,hard,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",250,limit,250,0,hard,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",250,limit,250,0,hard,Neural Net (MLP),2.2819763615131367e-23,0,1
+"Run-away right (never halts, but not provable by repetition)",500,limit,500,0,random,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",500,limit,500,0,random,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",500,limit,500,0,random,Neural Net (MLP),6.913309526137653e-11,0,1
+"Run-away right (never halts, but not provable by repetition)",500,limit,500,0,hard,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",500,limit,500,0,hard,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",500,limit,500,0,hard,Neural Net (MLP),2.2819763615131367e-23,0,1
+"Run-away right (never halts, but not provable by repetition)",1000,limit,1000,0,random,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",1000,limit,1000,0,random,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",1000,limit,1000,0,random,Neural Net (MLP),6.913309526137653e-11,0,1
+"Run-away right (never halts, but not provable by repetition)",1000,limit,1000,0,hard,Decision Tree,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",1000,limit,1000,0,hard,Random Forest,0.0,0,1
+"Run-away right (never halts, but not provable by repetition)",1000,limit,1000,0,hard,Neural Net (MLP),2.2819763615131367e-23,0,1
+"Binary counter (counts forever, never halts)",10,limit,10,0,random,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",10,limit,10,0,random,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",10,limit,10,0,random,Neural Net (MLP),0.0001402230377433444,0,1
+"Binary counter (counts forever, never halts)",10,limit,10,0,hard,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",10,limit,10,0,hard,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",10,limit,10,0,hard,Neural Net (MLP),0.0,0,1
+"Binary counter (counts forever, never halts)",25,limit,25,0,random,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",25,limit,25,0,random,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",25,limit,25,0,random,Neural Net (MLP),2.9847433415575993e-07,0,1
+"Binary counter (counts forever, never halts)",25,limit,25,0,hard,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",25,limit,25,0,hard,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",25,limit,25,0,hard,Neural Net (MLP),1.0148279489335812e-09,0,1
+"Binary counter (counts forever, never halts)",50,limit,50,0,random,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",50,limit,50,0,random,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",50,limit,50,0,random,Neural Net (MLP),1.3110603997184184e-07,0,1
+"Binary counter (counts forever, never halts)",50,limit,50,0,hard,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",50,limit,50,0,hard,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",50,limit,50,0,hard,Neural Net (MLP),1.3654363606121406e-08,0,1
+"Binary counter (counts forever, never halts)",100,limit,100,0,random,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",100,limit,100,0,random,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",100,limit,100,0,random,Neural Net (MLP),8.27043298704544e-08,0,1
+"Binary counter (counts forever, never halts)",100,limit,100,0,hard,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",100,limit,100,0,hard,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",100,limit,100,0,hard,Neural Net (MLP),1.927499365900238e-11,0,1
+"Binary counter (counts forever, never halts)",250,limit,250,0,random,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",250,limit,250,0,random,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",250,limit,250,0,random,Neural Net (MLP),8.27043298704544e-08,0,1
+"Binary counter (counts forever, never halts)",250,limit,250,0,hard,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",250,limit,250,0,hard,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",250,limit,250,0,hard,Neural Net (MLP),3.526129432406563e-12,0,1
+"Binary counter (counts forever, never halts)",500,limit,500,0,random,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",500,limit,500,0,random,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",500,limit,500,0,random,Neural Net (MLP),8.27043298704544e-08,0,1
+"Binary counter (counts forever, never halts)",500,limit,500,0,hard,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",500,limit,500,0,hard,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",500,limit,500,0,hard,Neural Net (MLP),3.526129432406563e-12,0,1
+"Binary counter (counts forever, never halts)",1000,limit,1000,0,random,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",1000,limit,1000,0,random,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",1000,limit,1000,0,random,Neural Net (MLP),8.27043298704544e-08,0,1
+"Binary counter (counts forever, never halts)",1000,limit,1000,0,hard,Decision Tree,0.0,0,1
+"Binary counter (counts forever, never halts)",1000,limit,1000,0,hard,Random Forest,0.0,0,1
+"Binary counter (counts forever, never halts)",1000,limit,1000,0,hard,Neural Net (MLP),3.526129432406563e-12,0,1
