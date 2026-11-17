@@ -18,7 +18,7 @@ Requires Python 3.10+.
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python -m pytest tests -v       # 34 tests: simulator, features, models, headless app
+.venv/bin/python -m pytest tests -v       # 37 tests: simulator, features, models, headless app
 .venv/bin/python experiment.py            # regenerate results/ (about 3 min on a 12-core CPU)
 .venv/bin/streamlit run app.py            # interactive simulator & predictor
 ```
@@ -46,7 +46,7 @@ full version afterwards.
 | `features.py` | 19 static features (transition table, state-graph reachability, input statistics) and 8 probe features (behaviour during a 10-step trial run) |
 | `ml_models.py` | Decision Tree, Random Forest and `BalancedMLP` (neural net with a decision threshold tuned on a validation split for class imbalance) |
 | `experiment.py` | Builds the datasets, then runs a 5-seed evaluation at 7 step limits plus studies of machine size, feature importance, probe length, the MLP imbalance fix, hand-written machines and cost; writes plots, CSVs, `models.joblib` and `summary.md` to `results/` |
-| `app.py` | Streamlit app: step-through simulator with tape view and state diagram (current state highlighted), 3-model predictor vs simulation at every L, batch tester, experiment dashboard, theory notes |
+| `app.py` | Streamlit app with 5 tabs: overview (where each requirement is shown), step-through simulator (tape view, rule applied at each step, transition table, state diagram, execution trace), 3-model predictor vs simulation at every L with explained features and a batch tester, experiments (dataset, step limit, machine size, features, robustness, cost), theory notes |
 | `tests/` | Simulator semantics (incrementer outputs, busy beavers, loop vs limit, parser errors, missing rules), features, models, headless app tests |
 | `REPORT.md` / `REPORT.pdf` | Experimental report: background, method, results, discussion, conclusion |
 | `VIVA_NOTES.md` | Plain-language notes and likely examiner questions |

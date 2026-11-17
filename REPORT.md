@@ -397,7 +397,7 @@ halting problem.
 
 ```bash
 pip install -r requirements.txt
-python -m pytest tests -v     # 34 tests: simulator, features, models, headless app
+python -m pytest tests -v     # 37 tests: simulator, features, models, headless app
 python experiment.py          # regenerates everything in results/ (≈ 3 min)
 streamlit run app.py          # interactive simulator and predictor
 ```

@@ -23,8 +23,8 @@ impossible.
 | `features.py` | **Turns a machine into numbers** for ML. 19 *static* features read from the rule table (e.g. "what fraction of rules go to H?", "how many steps from the start state to H in the state graph?") and 8 *probe* features from running just 10 steps (e.g. "did it halt?", "how far did the head move?"). |
 | `ml_models.py` | **The three classifiers:** Decision Tree, Random Forest, and a neural network (`BalancedMLP`). The MLP picks its own decision threshold on a validation split, because only about 8% of the hard examples are positive. |
 | `experiment.py` | **Runs every experiment.** It generates the datasets, trains and tests the models over 5 random splits at 7 step limits, runs the extra studies (machine size, feature importance, probe length, MLP fix, hand-written machines, cost), and writes everything to `results/` (CSVs, plots, `summary.md`). |
-| `app.py` | **The interactive website** (Streamlit). Tab 1: edit a machine and step through the run, watching the tape and the state diagram with the current state highlighted. Tab 2: what the three models predict vs. what simulation says, at every L, plus a batch test. Tab 3: all the plots and tables. Tab 4: theory notes. |
-| `tests/` | **34 automatic checks:** the incrementer gives the right answers, the busy beavers write the right number of 1s, ping-pong is detected as looping, the run-away gives "limit", bad rules are rejected, a missing rule halts, and the app loads and shows correct verdicts. |
+| `app.py` | **The interactive website** (Streamlit). Five tabs. **Overview**: which part of the app shows each requirement of the brief. **Simulator**: edit a machine and step through the run (Prev/Next buttons), watching the tape, the rule applied at each step, the transition table and the state diagram with the current state highlighted. **Halting prediction**: what the three models guess vs. what simulation says, at every L, the features explained, plus a batch test. **Experiments**: the dataset, and every plot with a one-line takeaway. **Theory notes**. |
+| `tests/` | **37 automatic checks:** the incrementer gives the right answers, the busy beavers write the right number of 1s, ping-pong is detected as looping, the run-away gives "limit", bad rules are rejected, a missing rule halts, and the app loads, shows correct verdicts and explains each step. |
 | `results/` | All generated data, plots, trained models (`models.joblib`) and `summary.md`, which holds every number used in the report. |
 
 ---
@@ -142,8 +142,10 @@ while the hard-trained trees catch BB(4).
 
 ## 7. Demo checklist (in the app)
 
-1. Pick **4-state busy beaver** → step through to step 107 and watch the highlighted state move
-   in the diagram until it reaches H.
+0. Open the **Overview** tab: it shows where each requirement of the brief is demonstrated.
+1. Pick **4-state busy beaver** → in the Simulator press **Next ▶** a few times: the "What happens
+   next" box names the rule being applied and the transition table highlights it. Press **End ⏭**
+   (step 107, halts) and watch the highlighted state reach H.
 2. Pick **Ping-pong** → "Provably never halts": the configuration repeated.
 3. Pick **Run-away right** → "Not halted within L": explain why this is not "never halts".
 4. **Prediction tab** on BB(4): the per-limit table shows simulation saying "not within L" up to
